@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+bun.lockb
+package-lock.json
+yarn.lock
+
+# Build outputs
+dist/
+build/
+*.js.map
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+.cache/
+
+# Database (optional - uncomment if you don't want to track)
+# database/*.sqlite
+# *.sqlite
+
+# Models (large files)
+models/*.gguf
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Secrets - NEVER COMMIT
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# Large files (too big for GitHub)
+agents/agents/shadow/sim/*.tar
+agents/agents/shadow/sim/*.tgz
+
+# Runtime artifacts (local state)
+database/
+memory/
+.claude/
+models/
+*.sqlite
+*.bin
+
+# User-specific settings
+settings/settings.json

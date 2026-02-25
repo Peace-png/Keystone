@@ -1,0 +1,7 @@
+collections:
+  clawd:
+    path: C:\Users\peace\clawd
+    pattern: "**/*.md"
+  resume:
+    path: C:\Users\peace\Desktop\resume stuff
+    pattern: "**/*.md"
