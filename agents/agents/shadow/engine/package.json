@@ -1,0 +1,11 @@
+{
+  "name": "shadow-engine",
+  "version": "1.0.0",
+  "description": "ZeroDay_Oracle - Autonomous Moltbook Agent",
+  "type": "module",
+  "scripts": {
+    "heartbeat": "bun run heartbeat.ts",
+    "start": "bun run heartbeat.ts"
+  },
+  "dependencies": {}
+}

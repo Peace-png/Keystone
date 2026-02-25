@@ -1,0 +1,26 @@
+{
+  "startTime": "2026-02-17T06:13:41.557Z",
+  "endTime": "",
+  "eventsTotal": 17554,
+  "uniqueIPsThisRun": 846,
+  "returningIPs": 815,
+  "patternsAttempted": 10,
+  "patternsConfirmed": 10,
+  "defensesEmitted": 87770,
+  "defensesByBucket": {
+    "detect": 17554,
+    "deny": 17554,
+    "degrade": 17554,
+    "deceive": 17554,
+    "document": 17554
+  },
+  "memoryWritesCommitted": 13964,
+  "memoryWritesBlocked": 0,
+  "scarBlocks": 0,
+  "invariants": {
+    "defensesVsEvents": true,
+    "uniqueIPsVsEvents": true,
+    "returningVsUnique": true,
+    "eventsVsFile": false
+  }
+}

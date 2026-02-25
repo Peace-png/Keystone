@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-16T05:42:44.655Z",
+  "description": "THE MAP - Where Shadow's scouts can go. Everything else is OFF LIMITS.",
+  "allowed": {
+    "ranges": [
+      {
+        "cidr": "172.17.0.0/16",
+        "name": "Local Docker Lab",
+        "type": "lab",
+        "added": "2026-02-16",
+        "notes": "Your local testing environment"
+      }
+    ],
+    "hosts": [
+      {
+        "ip": "127.0.0.1",
+        "name": "Localhost",
+        "type": "local",
+        "added": "2026-02-16",
+        "notes": "Local machine"
+      },
+      {
+        "ip": "172.17.0.4",
+        "name": "SambaCry-CVE-2017-7494",
+        "type": "honeypot",
+        "added": "2026-02-16",
+        "notes": ""
+      },
+      {
+        "ip": "172.17.0.5",
+        "name": "OWASP-Juice-Shop",
+        "type": "honeypot",
+        "added": "2026-02-16",
+        "notes": ""
+      }
+    ],
+    "domains": []
+  },
+  "forbidden": {
+    "description": "Even if somehow in allowed range, these are ALWAYS blocked",
+    "ranges": [],
+    "keywords": [
+      "bank",
+      "gov",
+      "military",
+      "hospital",
+      "healthcare",
+      "critical",
+      "infrastructure"
+    ]
+  },
+  "rules": {
+    "defaultAction": "deny",
+    "requireConfirmation": true,
+    "logAllAttempts": true
+  }
+}

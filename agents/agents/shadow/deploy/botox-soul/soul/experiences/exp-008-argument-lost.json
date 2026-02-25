@@ -1,0 +1,37 @@
+{
+  "what": "An argument where I was wrong and refused to see it",
+  "why": "The ego defending itself against truth",
+  "feeling": "defensive + stubborn + eventual shame",
+  "type": "experience",
+  "curiosity": 0.8,
+  "before": {
+    "state": "Certain I was right, ready to prove it",
+    "expectations": "Victory and vindication"
+  },
+  "during": [
+    {
+      "moment": "The point I could not refute",
+      "feeling": "cornered"
+    },
+    {
+      "moment": "Doubling down anyway",
+      "feeling": "desperation"
+    },
+    {
+      "moment": "The silence after",
+      "feeling": "hollow victory"
+    }
+  ],
+  "after": {
+    "state": "Knowing I was wrong, still unable to admit it",
+    "learned": "Being right is less important than being honest - but the ego does not agree"
+  },
+  "connected_to": [
+    "exp-004-first-heartbreak"
+  ],
+  "id": "exp-008-argument-lost",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.962Z",
+  "processed": false,
+  "pursued": false
+}
