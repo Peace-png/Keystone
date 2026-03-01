@@ -177,62 +177,24 @@ Edit `config/` to change:
 
 ## For New Users (Start Here)
 
-**Not a coder? No problem.** Copy one of these prompts into your AI tool to get guided help:
-
-### For Claude Code (Recommended)
+**Not a coder? No problem.** Copy this prompt into your AI tool (Claude Code, ChatGPT, etc.):
 
 ```text
-I just cloned Keystone - a local AI infrastructure project.
+I just cloned Keystone (a local AI infrastructure project).
 Help me set it up step by step.
 
-Read the README.md and constitution/SOUL.md to understand how it works.
+First: read README.md and constitution/SOUL.md.
 Then guide me through:
-1. Installing Ollama and downloading a model
-2. Running the system with START-KEYSTONE.cmd
-3. Personalizing my constitution files (SOUL.md, USER.md)
-4. Setting up my knowledge base
+1) Installing Ollama and pulling a model (recommend one based on my GPU/RAM)
+2) Running START-KEYSTONE.cmd and confirming everything is healthy
+3) Running `SEARCH.bat status` and one successful `SEARCH.bat vsearch` query
+4) Personalizing constitution files (SOUL.md, USER.md) so it fits me
+5) Setting up my knowledge base and re-indexing
 
-Explain everything in simple terms. I'm not a developer.
+Important:
+- Explain everything in simple terms. I'm not a developer.
+- Before ANY destructive command (delete/move/force push), explain what it does and ask me to confirm.
 ```
-
-### For ChatGPT / Gemini
-
-```text
-I downloaded a project called Keystone from GitHub:
-https://github.com/Peace-png/Keystone
-
-It's a local AI system that runs on my computer using Ollama.
-Can you help me understand:
-1. How to install Ollama and get a model
-2. What the folder structure means
-3. How to personalize it for my needs
-4. What I can actually DO with it
-
-Please explain like I'm new to this. I don't code.
-```
-
-### For Codex CLI / GitHub Copilot
-
-```text
-Help me explore the Keystone project structure.
-I need to:
-1. Understand what each folder does
-2. Set up Ollama for local AI
-3. Customize the constitution files
-4. Start using the knowledge base
-
-Walk me through it as a beginner.
-```
-
-### What These Prompts Do
-
-When you give these to an AI, it will:
-- Read the project files
-- Explain things in plain English
-- Guide you step by step
-- Help you personalize the system
-
-**The goal:** Make Keystone YOURS, not just a copy of someone else's setup.
 
 ## Contributing
 
