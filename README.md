@@ -22,6 +22,34 @@
 - [Ollama](https://ollama.ai) - Local LLM inference
 - NVIDIA GPU (recommended for vector search)
 
+### Model Setup
+
+Keystone uses Ollama for local AI. Here's how to set it up:
+
+```bash
+# 1. Install Ollama from https://ollama.ai
+
+# 2. Pull a model (choose one)
+ollama pull llama3.2        # Fast, good for most tasks (4.7GB)
+ollama pull mistral         # Balanced performance (4.1GB)
+ollama pull codellama       # Best for code (4.0GB)
+
+# 3. Verify it works
+ollama run llama3.2 "Hello, are you working?"
+
+# 4. Ollama runs automatically on port 11434
+# Keystone connects to: http://localhost:11434
+```
+
+**Recommended models by use case:**
+
+| Use Case | Model | Size |
+|----------|-------|------|
+| General use | llama3.2 | 4.7GB |
+| Coding help | codellama | 4.0GB |
+| Low VRAM (<8GB) | phi3 | 2.3GB |
+| Best quality | llama3.1:70b | 40GB+ |
+
 ### Installation
 
 ```bash
@@ -146,6 +174,31 @@ Edit `config/` to change:
 | GPU | Any | NVIDIA RTX series |
 | Storage | 5GB | 10GB+ |
 | OS | Windows 10/11 | Windows 11 |
+
+## For New Users
+
+**Copy this prompt and give it to your LLM (ChatGPT, Claude, etc.) to help you get started:**
+
+```
+I just cloned a project called Keystone from GitHub. It's a local AI infrastructure
+that uses Ollama for running AI models on my own machine.
+
+The folder structure is:
+- core/ - AI identity and skills
+- agents/ - Background services
+- search/ - Semantic search engine
+- knowledge/ - PARA knowledge base
+- settings/ - Configuration
+- constitution/ - AI behavior rules (SOUL.md, USER.md, VOICE.md)
+
+I need help:
+1. Installing Ollama and downloading a model
+2. Running START-KEYSTONE.cmd to start the system
+3. Understanding what each folder does
+4. Setting up my first knowledge base
+
+Please guide me through this step by step in simple terms. I'm not a developer.
+```
 
 ## Contributing
 
