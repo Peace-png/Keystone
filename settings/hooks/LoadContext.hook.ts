@@ -371,6 +371,41 @@ ${extracted}
   }
 }
 
+async function loadConstitution(): Promise<string> {
+  const keystoneDir = process.env.KEYSTONE_DIR || join(process.env.HOME || '', 'Desktop', 'Keystone');
+  const constitutionDir = join(keystoneDir, 'constitution');
+
+  if (!existsSync(constitutionDir)) {
+    console.error('📭 No constitution directory found');
+    return '';
+  }
+
+  try {
+    const files = ['SOUL.md', 'USER.md', 'VOICE.md', 'SESSION.md'];
+    let output = `
+╔════════════════════════════════════════════════════════════════════╗
+║  ⚖️  CONSTITUTION (Behavioral Rules)                               ║
+╚════════════════════════════════════════════════════════════════════╝
+`;
+
+    for (const file of files) {
+      const filePath = join(constitutionDir, file);
+      if (existsSync(filePath)) {
+        const content = readFileSync(filePath, 'utf-8');
+        // Truncate each file to 2000 chars to avoid token overflow
+        const truncated = content.length > 2000 ? content.substring(0, 2000) + '\n... (truncated)' : content;
+        output += `\n--- ${file} ---\n${truncated}\n`;
+        console.error(`✅ Loaded constitution: ${file}`);
+      }
+    }
+
+    return output;
+  } catch (error) {
+    console.error('⚠️ Error loading constitution:', error);
+    return '';
+  }
+}
+
 async function getRecentMemories(memoryLimit: number = 20): Promise<string> {
   const memoryFile = join(process.env.HOME || '', '.claude', 'memory', 'memories.json');
 
@@ -472,6 +507,9 @@ async function main() {
     // Load DAEMON_BOOT (4-phase boot sequence)
     const daemonBoot = await loadDaemonBoot();
 
+    // Load constitution (behavioral rules)
+    const constitution = await loadConstitution();
+
     // Load recent memories from memory system
     const recentMemories = await getRecentMemories(20);
 
@@ -503,6 +541,11 @@ This context is now active for this session. Follow all instructions, preference
     // Output DAEMON_BOOT
     if (daemonBoot) {
       console.log(daemonBoot);
+    }
+
+    // Output constitution
+    if (constitution) {
+      console.log(constitution);
     }
 
     // Output recent memories
