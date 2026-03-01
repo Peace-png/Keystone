@@ -22,9 +22,22 @@ echo.
 echo  %ESC%[90m================================================================%ESC%[0m
 echo.
 
+:: Set Keystone dir first (needed for identity check)
+set KEYSTONE_DIR=%~dp0
+
+:: P11 ENFORCEMENT: Identity check BEFORE anything else
+echo %ESC%[90m[P11] Checking git identity...%ESC%[0m
+call "%KEYSTONE_DIR%CHECK_IDENTITY.bat"
+if %ERRORLEVEL% neq 0 (
+    echo.
+    echo %ESC%[91mIdentity check failed. Fix the issue above, then restart.%ESC%[0m
+    pause
+    exit /b 1
+)
+echo.
+
 :: Set up Keystone paths - EVERYTHING FROM ONE FOLDER
 set BUN_EXE=C:\Users\peace\.bun\bin\bun.exe
-set KEYSTONE_DIR=%~dp0
 set KEYSTONE_AGENTS=%KEYSTONE_DIR%agents
 set KEYSTONE_SEARCH=%KEYSTONE_DIR%search
 set KEYSTONE_DATABASE=%KEYSTONE_DIR%database
