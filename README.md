@@ -153,17 +153,41 @@ Contributions welcome. Please read the contributing guidelines first.
 
 ## License
 
-[MIT License](LICENSE)
+MIT License
+
+```
+Copyright (c) 2026 Andrew Hagan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
 ## Acknowledgements
 
-This project incorporates code from:
+This project incorporates code from the following MIT-licensed projects:
 
-- [PAI](https://github.com/danielmiessler/PAI) by Daniel Miessler — Skills framework, The Algorithm
-- [ClawMem](https://github.com/yoloshii/ClawMem) by Yoloshi Nomotomoro — Memory indexing, MCP integration
-- [The Algorithm](https://github.com/danielmiessler/TheAlgorithm) by Daniel Miessler — ISC execution framework
+| Project | Author | What's Used |
+|---------|--------|-------------|
+| [PAI](https://github.com/danielmiessler/PAI) | Daniel Miessler | Skills framework, hooks, The Algorithm |
+| [ClawMem](https://github.com/yoloshii/ClawMem) | Yoloshi Nomotomoro | Memory indexing, MCP integration, BM25+vector search |
+| [The Algorithm](https://github.com/danielmiessler/TheAlgorithm) | Daniel Miessler | ISC execution framework |
 
-See [NOTICE](NOTICE) for full license text and attribution details.
+All upstream projects use the MIT License. See [NOTICE](NOTICE) for full details.
 
 ---
 
