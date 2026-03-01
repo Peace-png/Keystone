@@ -155,6 +155,16 @@ Contributions welcome. Please read the contributing guidelines first.
 
 [MIT License](LICENSE)
 
+## Acknowledgements
+
+This project incorporates code from:
+
+- [PAI](https://github.com/danielmiessler/PAI) by Daniel Miessler — Skills framework, The Algorithm
+- [ClawMem](https://github.com/yoloshii/ClawMem) by Yoloshi Nomotomoro — Memory indexing, MCP integration
+- [The Algorithm](https://github.com/danielmiessler/TheAlgorithm) by Daniel Miessler — ISC execution framework
+
+See [NOTICE](NOTICE) for full license text and attribution details.
+
 ---
 
 **Built for people who want AI infrastructure they actually own.**
