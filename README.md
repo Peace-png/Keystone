@@ -175,30 +175,64 @@ Edit `config/` to change:
 | Storage | 5GB | 10GB+ |
 | OS | Windows 10/11 | Windows 11 |
 
-## For New Users
+## For New Users (Start Here)
 
-**Copy this prompt and give it to your LLM (ChatGPT, Claude, etc.) to help you get started:**
+**Not a coder? No problem.** Copy one of these prompts into your AI tool to get guided help:
 
-```
-I just cloned a project called Keystone from GitHub. It's a local AI infrastructure
-that uses Ollama for running AI models on my own machine.
+### For Claude Code (Recommended)
 
-The folder structure is:
-- core/ - AI identity and skills
-- agents/ - Background services
-- search/ - Semantic search engine
-- knowledge/ - PARA knowledge base
-- settings/ - Configuration
-- constitution/ - AI behavior rules (SOUL.md, USER.md, VOICE.md)
+```text
+I just cloned Keystone - a local AI infrastructure project.
+Help me set it up step by step.
 
-I need help:
+Read the README.md and constitution/SOUL.md to understand how it works.
+Then guide me through:
 1. Installing Ollama and downloading a model
-2. Running START-KEYSTONE.cmd to start the system
-3. Understanding what each folder does
-4. Setting up my first knowledge base
+2. Running the system with START-KEYSTONE.cmd
+3. Personalizing my constitution files (SOUL.md, USER.md)
+4. Setting up my knowledge base
 
-Please guide me through this step by step in simple terms. I'm not a developer.
+Explain everything in simple terms. I'm not a developer.
 ```
+
+### For ChatGPT / Gemini
+
+```text
+I downloaded a project called Keystone from GitHub:
+https://github.com/Peace-png/Keystone
+
+It's a local AI system that runs on my computer using Ollama.
+Can you help me understand:
+1. How to install Ollama and get a model
+2. What the folder structure means
+3. How to personalize it for my needs
+4. What I can actually DO with it
+
+Please explain like I'm new to this. I don't code.
+```
+
+### For Codex CLI / GitHub Copilot
+
+```text
+Help me explore the Keystone project structure.
+I need to:
+1. Understand what each folder does
+2. Set up Ollama for local AI
+3. Customize the constitution files
+4. Start using the knowledge base
+
+Walk me through it as a beginner.
+```
+
+### What These Prompts Do
+
+When you give these to an AI, it will:
+- Read the project files
+- Explain things in plain English
+- Guide you step by step
+- Help you personalize the system
+
+**The goal:** Make Keystone YOURS, not just a copy of someone else's setup.
 
 ## Contributing
 
