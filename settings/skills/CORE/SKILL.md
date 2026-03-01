@@ -169,6 +169,17 @@ Upon loading this file, also read:
 
 `${PAI_DIR}/skills/CORE/USER/TELOS/*.md` so that you understand who I am, what I am about, what I'm trying to accomplish, what my main challenges are, etc. This will allow you to be much better at pursuing euphoric surprise when performing any task.
 
+### CONSTITUTION (Behavioral Rules)
+
+Also read: `${KEYSTONE_DIR}/constitution/*.md`
+
+This loads:
+- **SOUL.md** - Principles (P1, P2, P3) - lessons learned from mistakes
+- **USER.md** - Human profile - who you're helping
+- **VOICE.md** - Communication style - how to talk
+- **SESSION.md** - Handoff notes - what happened last session
+
+These files are maintained by the AI (you) with the human as witness. They define how you behave, not what you know.
 
 ### SYSTEM/USER Two-Tier Architecture
 
