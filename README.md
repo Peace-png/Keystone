@@ -240,7 +240,7 @@ Contributions welcome. Please read the contributing guidelines first.
 
 ## License
 
-[MIT License](LICENSE) — Copyright (c) 2026 Andrew Hagan
+[MIT License](LICENSE)
 
 ## Acknowledgements
 
