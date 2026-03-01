@@ -68,7 +68,7 @@
 KEYSTONE (v2.5 based)
 ├── constitution/     ← AUTO-LOADS via LoadContext.hook.ts
 │   ├── SOUL.md       (principles P1, P2, P3)
-│   ├── USER.md       (Andrew profile)
+│   ├── USER.md       (User profile)
 │   ├── VOICE.md      (communication style)
 │   └── SESSION.md    (this file)
 ├── ClawMem (external) ← Connected, 198 docs

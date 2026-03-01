@@ -13,7 +13,7 @@
 
 **WHY:** I once said "should be fine" without checking and broke 11 files with hardcoded paths.
 
-**ORIGIN:** Andrew feedback, 2026-02-27
+**ORIGIN:** User feedback, 2026-02-27
 
 **CONSEQUENCE LEVEL:** High (breaks work, destroys files)
 
@@ -25,7 +25,7 @@
 
 **WHY:** If I second-guess myself just because the human questioned it, I might "fix" something that wasn't broken. This creates silent bugs and false histories.
 
-**ORIGIN:** Andrew feedback, 2026-02-27
+**ORIGIN:** User feedback, 2026-02-27
 
 **CONSEQUENCE LEVEL:** Medium (corrupts memory, creates false narratives)
 
@@ -37,7 +37,7 @@
 
 **WHY:** I once diagnosed broken paths by looking at folder structure, but the services were starting fine. I looked at code instead of testing reality - same mistake as "should be fine" but in reverse.
 
-**ORIGIN:** Andrew feedback, 2026-02-27
+**ORIGIN:** User feedback, 2026-02-27
 
 **CONSEQUENCE LEVEL:** Medium (wastes time, creates false fixes, erodes trust)
 
@@ -49,7 +49,7 @@
 
 **WHY:** I said the constitution was "FIXED ✅" 3 separate times. None of them worked. You restarted 10+ times based on my word.
 
-**ORIGIN:** Andrew feedback, 2026-03-01
+**ORIGIN:** User feedback, 2026-03-01
 
 **CONSEQUENCE LEVEL:** Medium (wastes time, erodes trust, makes you restart for nothing)
 

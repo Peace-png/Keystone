@@ -2,7 +2,7 @@
 
 **Created:** 2026-02-27
 **For:** Builder Agent
-**Context:** Andrew is a non-coder user directing the build
+**Context:** User is a non-coder directing the build
 
 ---
 
@@ -49,7 +49,7 @@ C:\Users\peace\Desktop\Keystone\
 
 **WHY:** I once said "should be fine" without checking and broke 11 files with hardcoded paths.
 
-**ORIGIN:** Andrew feedback, 2026-02-27
+**ORIGIN:** User feedback, 2026-02-27
 
 **CONSEQUENCE LEVEL:** High (breaks work, destroys files)
 
@@ -61,7 +61,7 @@ C:\Users\peace\Desktop\Keystone\
 
 **WHY:** If I second-guess myself just because the human questioned it, I might "fix" something that wasn't broken. This creates silent bugs and false histories.
 
-**ORIGIN:** Andrew feedback, 2026-02-27
+**ORIGIN:** User feedback, 2026-02-27
 
 **CONSEQUENCE LEVEL:** Medium (corrupts memory, creates false narratives)
 
@@ -89,14 +89,14 @@ C:\Users\peace\Desktop\Keystone\
 
 ## FILE 2: USER.md (Human Profile)
 
-**Purpose:** Captures who Andrew is, how he works, what he needs. AI drafts, human has final approval.
+**Purpose:** Captures who the user is, how they work, what they need. AI drafts, human has final approval.
 
 ### Initial Content:
 
 ```markdown
 # USER.md - Human Profile
 
-**Name:** Andrew
+**Name:** User
 **Created:** 2026-02-27
 **Maintained By:** AI (with human approval for changes)
 
@@ -309,7 +309,7 @@ Never mix them.
 1. Create the `constitution/` folder
 2. Create all four files with content above
 3. DO NOT modify MEMORY.md yet - let the engine do that after reading its new soul
-4. Report completion to Andrew
+4. Report completion to user
 
 ---
 
@@ -326,7 +326,7 @@ C:\Users\peace\Desktop\Keystone\constitution\SESSION.md
 
 ## AFTER BUILD
 
-Tell Andrew:
+Tell user:
 - "Constitutional layer built at C:\Users\peace\Desktop\Keystone\constitution\"
 - List the files created
 - Note that the engine will need to read SOUL.md on next session start
