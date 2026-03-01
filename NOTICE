@@ -1,0 +1,114 @@
+# Third-Party Notices
+
+This project incorporates material from the following third-party sources.
+
+---
+
+## PAI (Personal AI Infrastructure)
+
+**Source:** https://github.com/danielmiessler/PAI
+**License:** MIT License
+**Copyright:** Daniel Miessler
+
+The following components are derived from or inspired by PAI:
+
+- Skills structure and format (`settings/skills/`)
+- The Algorithm implementation (`settings/skills/THEALGORITHM/`, `settings/skills/PAI/Components/Algorithm/`)
+- CORE skill framework
+- Hook patterns and implementation
+- Fabric pattern integrations
+
+```
+MIT License
+
+Copyright (c) Daniel Miessler
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+
+---
+
+## ClawMem
+
+**Source:** https://github.com/yoloshii/ClawMem
+**License:** MIT License
+**Copyright:** Yoloshi Nomotomoro
+
+The following components are derived from or use ClawMem:
+
+- Memory indexing and search (`agents/clawmem-daemon.ts`)
+- MCP server integration
+- Hook patterns for context surfacing
+- BM25 + vector search + RRF hybrid retrieval
+- SAME composite scoring concepts
+
+```
+MIT License
+
+Copyright (c) Yoloshi Nomotomoro
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+
+---
+
+## The Algorithm
+
+**Source:** https://github.com/danielmiessler/TheAlgorithm
+**License:** MIT License
+**Copyright:** Daniel Miessler
+
+The Algorithm (v0.2.25) is integrated into this system for structured task execution with ISC (Ideal State Criteria) tracking.
+
+```
+MIT License
+
+Copyright (c) Daniel Miessler
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+
+---
+
+## Original Work
+
+The following components are original work by Andrew Hagan:
+
+- `constitution/` - SOUL.md (Ten Scars), USER.md, VOICE.md, SESSION.md
+- `specs/STRUCTURAL_STRESS_TEST_P5_P6.md`
+- `specs/ENTROPY_OF_ALIGNMENT.md`
+- `specs/CONSTITUTIONAL_ARCHITECTURE.md`
+- `specs/SHADOW_QUANTUM_CONSENSUS.md`
+- `specs/TRUST_CALIBRATION.md`
+- `START-KEYSTONE.cmd` health check implementation
+- Shadow agent architecture (`agents/agents/shadow/`)
+
+These are licensed under the MIT License with copyright held by Andrew Hagan.
+
+---
+
+*This notice file ensures compliance with the MIT license requirements of all upstream projects.*
