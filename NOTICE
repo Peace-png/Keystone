@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-This project incorporates material from the following third-party sources.
+This project was influenced by the following sources.
 
 ---
 
@@ -10,13 +10,10 @@ This project incorporates material from the following third-party sources.
 **License:** MIT License
 **Copyright:** Daniel Miessler
 
-The following components are derived from or inspired by PAI:
-
-- Skills structure and format (`settings/skills/`)
-- The Algorithm implementation (`settings/skills/THEALGORITHM/`, `settings/skills/PAI/Components/Algorithm/`)
-- CORE skill framework
-- Hook patterns and implementation
-- Fabric pattern integrations
+Inspired by architectural concepts including:
+- Skills structure and format
+- Hook patterns for session lifecycle
+- CORE skill framework concepts
 
 ```
 MIT License
@@ -42,13 +39,10 @@ copies or substantial portions of the Software.
 **License:** MIT License
 **Copyright:** Yoloshi Nomotomoro
 
-The following components are derived from or use ClawMem:
-
-- Memory indexing and search (`agents/clawmem-daemon.ts`)
-- MCP server integration
-- Hook patterns for context surfacing
-- BM25 + vector search + RRF hybrid retrieval
-- SAME composite scoring concepts
+Inspired by memory system design concepts including:
+- BM25 + vector hybrid retrieval patterns
+- MCP server integration patterns
+- Context surfacing hooks
 
 ```
 MIT License
@@ -74,7 +68,12 @@ copies or substantial portions of the Software.
 **License:** MIT License
 **Copyright:** Daniel Miessler
 
-The Algorithm (v0.2.25) is integrated into this system for structured task execution with ISC (Ideal State Criteria) tracking.
+The execution framework in this project was inspired by The Algorithm's conceptual approach to:
+- ISC (Ideal State Criteria) tracking
+- Phased execution patterns (Observe → Think → Plan → Build → Execute → Verify → Learn)
+- Task verification patterns
+
+Note: This is conceptual influence. Implementation is original.
 
 ```
 MIT License
@@ -98,17 +97,10 @@ copies or substantial portions of the Software.
 
 The following components are original work by Andrew Hagan:
 
-- `constitution/` - SOUL.md (Ten Scars), USER.md, VOICE.md, SESSION.md
-- `specs/STRUCTURAL_STRESS_TEST_P5_P6.md`
-- `specs/ENTROPY_OF_ALIGNMENT.md`
-- `specs/CONSTITUTIONAL_ARCHITECTURE.md`
-- `specs/SHADOW_QUANTUM_CONSENSUS.md`
-- `specs/TRUST_CALIBRATION.md`
-- `START-KEYSTONE.cmd` health check implementation
-- Shadow agent architecture (`agents/agents/shadow/`)
+- `constitution/` — SOUL.md (Ten Scars), USER.md, VOICE.md, SESSION.md
+- `specs/` — All research and specification documents
+- `START-KEYSTONE.cmd` — Health check implementation
+- `agents/agents/shadow/` — Shadow agent architecture
+- `settings/skills/THEALGORITHM/` — Original implementation of execution framework
 
-These are licensed under the MIT License with copyright held by Andrew Hagan.
-
----
-
-*This notice file ensures compliance with the MIT license requirements of all upstream projects.*
+Licensed under MIT License with copyright held by Andrew Hagan.
