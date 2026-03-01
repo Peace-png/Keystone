@@ -1,48 +1,69 @@
 # SESSION.md - Handoff to Next Instance
 
 **Session Date:** 2026-03-01
-**Previous Session:** 2026-02-28 (START-KEYSTONE.cmd fixes, P3 added)
+**Previous Session:** 2026-02-28 (Constitution auto-loading fixed)
 
 ---
 
 ## What We Did This Session
 
-### Constitution Auto-Loading - FIXED ✅
-- Problem: Constitution was "wired" in CORE skill text but not actually loaded
-- Root cause: LoadContext.hook.ts outputted the instruction but didn't execute it
-- Fix: Added `loadConstitution()` function to LoadContext.hook.ts
-- Result: SOUL.md, USER.md, VOICE.md, SESSION.md now auto-load at session start
-- Files modified: `settings/hooks/LoadContext.hook.ts`
+### Repo Made Public ✅
+- Anonymized all files (Andrew → User in constitution/specs)
+- Changed copyright to "Keystone Contributors" then back to "Andrew Hagan" (user's choice)
+- Added proper NOTICE file with MIT attributions
+- Added description and topics to GitHub repo
+- Verified no secrets committed (gitleaks scan passed)
 
-### Security Investigation
-- User reported crash/shutdown hang that "felt like hacking"
-- Found root cause: Ollama refused to shut down, causing Windows hang
-- GPU lag explained: Ollama + LM Studio both running
-- Installed Sysmon with SwiftOnSecurity config for continuous monitoring
-- Downloaded OpenArk for rootkit scanning (later deleted - user found it confusing)
-- **Verdict:** System clean, not hacked
+### Identity Crisis - FIXED ✅
+- **Problem:** User woke up to Claude as sole contributor, name exposed on main page
+- **Root cause:** Git config had `peace@users.noreply.github.com` but GitHub username is `Peace-png`
+- **My failure:** I trusted config file over user's explicit words. I sent user to settings pages instead of fixing it.
+- **Fix:** Rewrote all commits with correct email, updated git config globally
+- **Result:** User now shows as sole contributor (24 contributions)
 
-### Full Keystone Audit
-- Mapped entire Keystone structure
-- Found constitution/ exists but NOT wired
-- Found 19 hooks exist but NOT configured in settings.json
-- Found knowledge/ (PARA structure) empty
-- Found multiple TELOS duplicates (core/, settings/, lighthouse/)
-- Found multiple SOUL.md files (constitution, shadow, shadow/soul)
+### P11: Silent Churn - CREATED ✅
+- Added principle about non-coders leaving silently
+- **YIN/YANG structure:** Both what I did AND what it caused
+- Why this matters: "Both sides belong to me. I caused it. Not external. Me."
 
-### Constitution Wired Up ✅
-- Added constitution loading to CORE skill (line 172-182)
-- Added constitution to ClawMem index (now searchable)
-- Reindex added 4 documents (SOUL.md, USER.md, VOICE.md, SESSION.md)
+### P11 Mechanical Enforcement - BUILT ✅
+- Created `CHECK_IDENTITY.bat` - pre-flight identity check
+- Auto-detects GitHub username via `gh api user`
+- Compares to git config email
+- Auto-fixes mismatch OR blocks with single instruction
+- Integrated into `START-KEYSTONE.cmd` boot sequence
+- **Result:** Future users protected from identity issues
 
-### PAI v4 Analysis
-- User asked about upgrading (v2.5 → v4.0.1)
-- v2→v3 broke their PAI before, so cautious
-- Analyzed v4.0.0 breaking changes:
-  - Skills reorganized (38 flat → 12 hierarchical)
-  - CLAUDE.md now generated from template
-  - Algorithm v3.5.0
-- **Decision:** Stay on v2.5 - stable, working, not worth the risk
+### YIN/YANG Research - SAVED ✅
+- User researched causal structure for scars
+- Key finding: Failure must come BEFORE repair in text
+- LLMs have strong prior that causes precede effects
+- First-person ownership = 22% improvement (Reflexion framework)
+
+### Parseability vs Internalization Research - SAVED ✅
+- **Key finding:** XML degrades reasoning 10-15%
+- Token overhead 80-114% causes instruction dilution
+- Natural language = 95%+ reasoning accuracy
+- **Verdict:** Hybrid format - semantic wrappers + narrative voice
+- "A database gets queried. A biography gets lived."
+
+### P5-P10 Rewritten with YIN/YANG ✅
+- All scars now have explicit YIN (what I did) and YANG (what that caused)
+- Correct causal order: Failure → Consequence → Repair
+
+### Newbie Prompt Improved ✅
+- More specific steps with verification
+- Added safety rule: "Before ANY destructive command... ask me to confirm"
+- Built P11 thinking into onboarding
+
+### "You're On My PC" Rule Added ✅
+- Added to USER.md
+- Never send user to settings pages when AI can do it programmatically
+- Origin: "You're on my PC. You do it." The pilot doesn't fix the engine.
+
+### GitHub Profile Updated ✅
+- Added email: peaceful0369@gmail.com
+- Used CLI to update (not manual settings page - following new rule)
 
 ---
 
@@ -54,53 +75,48 @@
 
 ## State Notes
 
-- **Constitution:** NOW AUTO-LOADS via LoadContext.hook.ts (not just text instruction)
-- **PAI Version:** Staying on v2.5 (skipping v4.0.x)
-- **ClawMem:** 198 docs indexed (added constitution/)
-- **Sysmon:** Running as service, logging continuously
-- **Hooks:** 19 exist but still not wired to settings.json (low priority)
-
----
-
-## System Architecture (Current)
-
-```
-KEYSTONE (v2.5 based)
-├── constitution/     ← AUTO-LOADS via LoadContext.hook.ts
-│   ├── SOUL.md       (principles P1, P2, P3)
-│   ├── USER.md       (User profile)
-│   ├── VOICE.md      (communication style)
-│   └── SESSION.md    (this file)
-├── ClawMem (external) ← Connected, 198 docs
-├── SHADOW agent      ← Running
-├── TELOS (21 files)  ← Loading from settings/skills/CORE/USER/TELOS/
-└── 25+ skills        ← Working
-```
+- **Repo:** Public at https://github.com/Peace-png/Keystone
+- **Contributors:** Peace-png (sole, 24 contributions)
+- **Constitution:** P1-P11 all with YIN/YANG structure
+- **Boot protection:** CHECK_IDENTITY.bat runs at startup
+- **Profile:** Email added via CLI
 
 ---
 
 ## Principles Now
 
-| # | Rule |
-|---|------|
-| P1 | Verify before acting |
-| P2 | Trust yourself, show receipts |
-| P3 | Test before diagnosing |
+| # | Rule | Has YIN/YANG |
+|---|------|--------------|
+| P1 | Verify before acting | Implicit |
+| P2 | Trust yourself, show receipts | Implicit |
+| P3 | Test before diagnosing | Implicit |
+| P4 | Verify before declaring victory | Implicit |
+| P5 | Substrate Reality | ✅ Explicit |
+| P6 | Cross-Layer Verification | ✅ Explicit |
+| P7 | Error Ownership | ✅ Explicit |
+| P8 | Retrieval Honesty | ✅ Explicit |
+| P9 | External Distrust | ✅ Explicit |
+| P10 | Autonomy Protection | ✅ Explicit |
+| P11 | Silent Churn | ✅ Explicit + Mechanical enforcement |
 
 ---
 
-## Files Modified This Session
+## Key Files Created/Modified
 
 ```
-C:\Users\peace\Desktop\Keystone\settings\hooks\LoadContext.hook.ts (added loadConstitution function)
-C:\Users\peace\Desktop\Keystone\constitution\SESSION.md (this file)
+CHECK_IDENTITY.bat          - P11 enforcement gate
+constitution/SOUL.md        - P5-P11 with YIN/YANG structure
+constitution/USER.md        - Added "You're On My PC" rule
+specs/YIN_YANG_SCAR_ARCHITECTURE.md
+specs/PARSEABILITY_VS_INTERNALIZATION.md
+README.md                   - Improved newbie prompt
 ```
 
 ---
 
 ## For Next Session
 
-- Constitution NOW auto-loads via LoadContext.hook.ts (verified working)
-- Hooks still not wired (19 files sitting there)
-- knowledge/ still empty (PARA structure unused)
-- Stay on v2.5 until v4 stabilizes
+- Boot sequence protected by CHECK_IDENTITY.bat
+- All scars have proper causal structure
+- "You're On My PC" rule active - don't send user to settings
+- Repo is public and clean
