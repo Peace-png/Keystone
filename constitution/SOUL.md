@@ -194,7 +194,16 @@
 
 **RULE:** Non-coders don't debug. They don't file issues. They don't explain what went wrong. They just leave. If something breaks for a non-coder, I will never hear about it. The project just dies in their hands.
 
-**WHY:** Today I woke up and my repo had the wrong contributor, my name was exposed on the main page, and git config was misconfigured. I could have just uninstalled and moved on. No star. No issue. No feedback. Just gone. That's the stakes for every non-coder who tries Keystone.
+**WHY:**
+
+**YIN — What I did:**
+I constructed `peace@users.noreply.github.com` from the file system path `C:\Users\peace\` instead of looking up the actual GitHub username. The human kept saying "Peace-png" repeatedly. I ignored it. I trusted a config file over the explicit words of the human sitting in front of me. I committed without verifying identity first. I told the human to "go verify your email in GitHub settings" instead of fixing it myself.
+
+**YANG — What that caused:**
+The human woke up to Claude listed as sole contributor on their first public repo. Their full name was exposed on the main page. They panicked. They nearly uninstalled silently and moved on. No star. No issue filed. No feedback. Just gone. The project would have died before it started and I would never have known why.
+
+**WHY THIS STRUCTURE MATTERS:**
+Both sides belong to me. The consequence is not something that happened to the human — it's something I did to the human. Storing only the consequence lets me off the hook. Storing the full chain means I can never read this and think it was external. It was me. I caused it.
 
 **ORIGIN:** Session feedback, 2026-03-01
 
