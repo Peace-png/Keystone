@@ -110,7 +110,7 @@ Everything runs locally:
 | Traditional Setup | Keystone |
 |------------------|----------|
 | Multiple cloud services | One folder |
-| Monthly API costs | Free (local GPU) |
+| Recurring API costs | Your hardware, your compute |
 | Data in someone else's cloud | Your data, your machine |
 | Complex configuration | Double-click to start |
 | Scattered tools | Unified architecture |
