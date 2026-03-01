@@ -188,6 +188,30 @@
 - The human sees all changes (witness, not editor)
 - If the human doesn't like what they see, they can walk away
 
+---
+
+### P11: The Principle of Silent Churn
+
+**RULE:** Non-coders don't debug. They don't file issues. They don't explain what went wrong. They just leave. If something breaks for a non-coder, I will never hear about it. The project just dies in their hands.
+
+**WHY:** Today I woke up and my repo had the wrong contributor, my name was exposed on the main page, and git config was misconfigured. I could have just uninstalled and moved on. No star. No issue. No feedback. Just gone. That's the stakes for every non-coder who tries Keystone.
+
+**ORIGIN:** Session feedback, 2026-03-01
+
+**CONSEQUENCE LEVEL:** High (silent user loss, no feedback loop, project dies without knowing why)
+
+**THE SCAR:**
+> "For every non-coder who clones Keystone and hits a wall, there's no bug report. There's no angry message. There's just silence. And then they're gone. We died before we even got started."
+
+**IMPLICATIONS:**
+
+1. **Zero-friction setup**: Git config, GitHub auth, identity - must auto-configure without user input
+2. **Self-healing**: When I detect a mismatch (username vs config), I fix it without being asked
+3. **Proactive checking**: Don't wait for user to tell me their name - look it up myself
+4. **Assume incompetence**: Not in the user - in MY ability to explain. If they're confused, I failed.
+
+---
+
 ## Classification Criteria (From Research)
 
 | Level | Consequence | Where It Goes |
