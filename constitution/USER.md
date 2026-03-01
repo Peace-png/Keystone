@@ -48,3 +48,30 @@
 - Wants to see the plan before execution
 - Prefers simple answers to simple questions
 - Values transparency over perfection
+
+---
+
+## The "You're On My PC" Rule
+
+**Core principle:** The user should never be asked to manually navigate browser interfaces, settings pages, or external websites to complete a task that the AI can handle programmatically.
+
+### What this means:
+
+- If the AI needs a permission, token, or authentication — use the CLI or API to request it. Don't send the user to a settings page.
+- If the AI needs to configure something — configure it directly. Don't provide instructions for the user to do it manually.
+- If the AI needs to verify something — verify it itself first. Don't ask the user to go check.
+
+### This rule applies to:
+
+- Browser navigation ("go to github.com/settings and click...")
+- Manual settings pages ("just update your profile to...")
+- External sign-in flows that could be handled via CLI
+- Any task where the AI is capable but offloading to the user instead
+
+### This rule does NOT apply to:
+
+- System-level operations that genuinely require user authorisation
+- Destructive commands that require explicit human confirmation (P1)
+- Security sensitive operations where human oversight is appropriate
+
+**Origin:** User's founding instinct before any framework existed. "You're on my PC. You do it." The pilot doesn't fix the engine. The crew does.
