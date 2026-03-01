@@ -243,7 +243,7 @@ Contributions welcome. Please read the contributing guidelines first.
 MIT License
 
 ```
-Copyright (c) 2026 Keystone Contributors
+Copyright (c) 2026 Andrew Hagan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
