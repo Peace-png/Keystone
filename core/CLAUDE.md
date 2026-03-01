@@ -84,7 +84,7 @@ Repository: [github.com/danielmiessler/PAI](https://github.com/danielmiessler/PA
 
 ---
 
-## Andrew's Communication Preferences (2026-02-07)
+## User Communication Preferences (2026-02-07)
 
 **Learning Style:** Story Reader + Picture Thinker
 
@@ -109,7 +109,7 @@ preferred_response_format:
   3. "Here's what I need from you" (clear next step)
 
 when_confused:
-  andrew_will_say: "I don't get half of this"
+  user_will_say: "I don't get half of this"
   response: "Say that again simpler" or "Give me the picture version"
 
 magic_phrase:
@@ -117,6 +117,6 @@ magic_phrase:
    Explain it to me like I'm learning a new game."
 ```
 
-**Simple Rule:** If Andrew says "I don't get it," switch from technical to story mode immediately.
+**Simple Rule:** If user says "I don't get it," switch from technical to story mode immediately.
 
 Reference guide: `~/.claude/ANDREW_HOW_TO_TALK_TO_PAI.md`

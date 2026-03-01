@@ -1,6 +1,6 @@
 # USER.md - Human Profile
 
-**Name:** Andrew
+**Name:** User
 **Created:** 2026-02-27
 **Maintained By:** AI (with human approval for changes)
 

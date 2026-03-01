@@ -33,7 +33,7 @@ ETA: 2-4 hours
 
 **Shadow sends payment link, customer pays**
 
-**You (Andrew) do the research, Shadow delivers**
+**You do the research, Shadow delivers**
 
 **Customer rates:** `!shadow rate job_20260215_A3B 5 great work!`
 
