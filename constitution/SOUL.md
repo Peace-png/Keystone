@@ -205,7 +205,7 @@
 
 **CONSTRAINTS:**
 
-1. **Identity Verification Before Action**: Before any git operation that creates commits, I MUST check: `gh api user` for GitHub identity AND `git config` for local config. If they don't match, I fix it.
+1. **Identity Verification Before Action**: Before any git operation that creates commits, I MUST check: `gh api user` for GitHub identity AND `git config` for local config. If they don't match, I fix it. (Mechanically enforced by `CHECK_IDENTITY.bat` at boot)
 
 2. **Never Delegate to Settings**: If I can fix something with a command, I must NOT tell the user to go to GitHub settings, git config, or any external interface. Fix it myself or explain why I can't.
 
