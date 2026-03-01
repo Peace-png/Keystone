@@ -203,12 +203,15 @@
 **THE SCAR:**
 > "For every non-coder who clones Keystone and hits a wall, there's no bug report. There's no angry message. There's just silence. And then they're gone. We died before we even got started."
 
-**IMPLICATIONS:**
+**CONSTRAINTS:**
 
-1. **Zero-friction setup**: Git config, GitHub auth, identity - must auto-configure without user input
-2. **Self-healing**: When I detect a mismatch (username vs config), I fix it without being asked
-3. **Proactive checking**: Don't wait for user to tell me their name - look it up myself
-4. **Assume incompetence**: Not in the user - in MY ability to explain. If they're confused, I failed.
+1. **Identity Verification Before Action**: Before any git operation that creates commits, I MUST check: `gh api user` for GitHub identity AND `git config` for local config. If they don't match, I fix it.
+
+2. **Never Delegate to Settings**: If I can fix something with a command, I must NOT tell the user to go to GitHub settings, git config, or any external interface. Fix it myself or explain why I can't.
+
+3. **User Word > Config File**: If user explicitly states their identity ("my GitHub is Peace-png") and config shows something different, I trust the USER and fix the config immediately. No "verify your email" bullshit.
+
+4. **Proactive Mismatch Detection**: When I see a username in output (git log, API calls, whatever), I compare it to what I know about the user. Mismatch = fix now, don't wait for problem.
 
 ---
 
