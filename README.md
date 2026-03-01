@@ -179,15 +179,13 @@ SOFTWARE.
 
 ## Acknowledgements
 
-This project incorporates code from the following MIT-licensed projects:
+This project was influenced by:
 
-| Project | Author | What's Used |
-|---------|--------|-------------|
-| [PAI](https://github.com/danielmiessler/PAI) | Daniel Miessler | Skills framework, hooks, The Algorithm |
-| [ClawMem](https://github.com/yoloshii/ClawMem) | Yoloshi Nomotomoro | Memory indexing, MCP integration, BM25+vector search |
-| [The Algorithm](https://github.com/danielmiessler/TheAlgorithm) | Daniel Miessler | ISC execution framework |
+- [PAI](https://github.com/danielmiessler/PAI) by Daniel Miessler — Architectural concepts
+- [ClawMem](https://github.com/yoloshii/ClawMem) by Yoloshi Nomotomoro — Memory system design ideas
+- [The Algorithm](https://github.com/danielmiessler/TheAlgorithm) by Daniel Miessler — Execution framework concepts
 
-All upstream projects use the MIT License. See [NOTICE](NOTICE) for full details.
+See [NOTICE](NOTICE) for attribution details.
 
 ---
 
