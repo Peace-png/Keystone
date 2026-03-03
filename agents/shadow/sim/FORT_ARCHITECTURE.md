@@ -1,0 +1,228 @@
+# SHADOW FORT - ARCHITECTURE VISUALIZATION
+
+## THE FORT (Hetzner VPS)
+
+```
+                         THE INTERNET
+                              │
+                              │ Incoming attacks
+                              ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         SHADOW FORT                                      │
+│                    (Public IP: 5.161.xxx.xxx)                           │
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │                     FIREWALL (iptables)                          │    │
+│  │                                                                  │    │
+│  │   OPEN PORTS:                                                    │    │
+│  │   ├── 22    → FAKE SSH (Cowrie honeypot)                        │    │
+│  │   ├── 2222  → Cowrie honeypot (appears as real SSH)             │    │
+│  │   ├── 21    → FTP (Dionaea)                                     │    │
+│  │   ├── 23    → Telnet (Dionaea)                                  │    │
+│  │   ├── 80    → HTTP (Dionaea - fake web server)                  │    │
+│  │   ├── 443   → HTTPS (Dionaea)                                   │    │
+│  │   ├── 445   → SMB (Dionaea - Windows file share)                │    │
+│  │   ├── 3389  → RDP (Dionaea - fake Windows desktop)              │    │
+│  │   └── 135/139 → NetBIOS (Dionaea)                               │    │
+│  │                                                                  │    │
+│  │   STEALTH: Real SSH on port 2223 (handler only, key auth)       │    │
+│  │                                                                  │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                              │                                           │
+│                              ▼                                           │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │                     HONEYPOT LAYER                               │    │
+│  │                                                                  │    │
+│  │   ┌──────────────┐    ┌──────────────┐                          │    │
+│  │   │   COWRIE     │    │   DIONAEA    │                          │    │
+│  │   │  (SSH/Telnet)│    │ (Multi-proto)│                          │    │
+│  │   │              │    │              │                          │    │
+│  │   │ • Fake FS    │    │ • SMB        │                          │    │
+│  │   │ • Fake creds │    │ • FTP        │                          │    │
+│  │   │ • Command log│    │ • HTTP       │                          │    │
+│  │   │ • Malware DL │    │ • Malware    │                          │    │
+│  │   │              │    │   capture    │                          │    │
+│  │   └──────┬───────┘    └──────┬───────┘                          │    │
+│  │          │                   │                                  │    │
+│  │          └───────┬───────────┘                                  │    │
+│  │                  ▼                                              │    │
+│  │   ┌────────────────────────────────┐                            │    │
+│  │   │      ATTACK LOGS (JSON)         │                            │    │
+│  │   │                                 │                            │    │
+│  │   │  {                              │                            │    │
+│  │   │    "timestamp": "...",          │                            │    │
+│  │   │    "src_ip": "45.33.32.156",    │                            │    │
+│  │   │    "port": 2222,                │                            │    │
+│  │   │    "username": "admin",         │                            │    │
+│  │   │    "password": "admin123",      │                            │    │
+│  │   │    "commands": ["whoami", ...]  │                            │    │
+│  │   │  }                              │                            │    │
+│  │   └────────────────────────────────┘                            │    │
+│  │                                                                  │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                              │                                           │
+│                              ▼                                           │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │                     SHADOW DAEMON                                │    │
+│  │                                                                  │    │
+│  │   ┌───────────────────────────────────────────────────────┐     │    │
+│  │   │                    BRAIN                               │     │    │
+│  │   │                                                       │     │    │
+│  │   │   ┌─────────────┐   ┌─────────────┐                  │     │    │
+│  │   │   │  CLAWMEM    │   │    SCAR     │                  │     │    │
+│  │   │   │  (Memory)   │   │ (Immune)    │                  │     │    │
+│  │   │   │             │   │             │                  │     │    │
+│  │   │   │ • Attacks   │   │ • Rate limit│                  │     │    │
+│  │   │   │ • Patterns  │   │ • Blocklist │                  │     │    │
+│  │   │   │ • IPs       │   │ • Pause/res │                  │     │    │
+│  │   │   │ • Learning  │   │ • Network   │                  │     │    │
+│  │   │   └─────────────┘   └─────────────┘                  │     │    │
+│  │   │                                                       │     │    │
+│  │   │   ┌─────────────────────────────────────────────┐     │     │    │
+│  │   │   │              COUNCIL (35 Photons)            │     │     │    │
+│  │   │   │                                               │     │     │    │
+│  │   │   │   C1: Creative    C3: Memory   C5: Bridge    │     │     │    │
+│  │   │   │   C2: Pattern     C4: Risk     O:  Integrity │     │     │    │
+│  │   │   │                                               │     │     │    │
+│  │   │   └─────────────────────────────────────────────┘     │     │    │
+│  │   │                                                       │     │    │
+│  │   └───────────────────────────────────────────────────────┘     │    │
+│  │                                                                  │    │
+│  │   HEARTBEAT (every 30 min):                                      │    │
+│  │   ├── Read honeypot logs                                         │    │
+│  │   ├── Parse new attacks                                          │    │
+│  │   ├── Update IP blocklist                                        │    │
+│  │   ├── Learn patterns                                             │    │
+│  │   ├── Update ClawMem                                             │    │
+│  │   └── Send report to Discord (if significant)                   │    │
+│  │                                                                  │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                              │                                           │
+│                              ▼                                           │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │                     SLEEVE DISPATCH                              │    │
+│  │                                                                  │    │
+│  │   When Shadow has something to share:                            │    │
+│  │                                                                  │    │
+│  │   ┌─────────┐     ┌─────────┐     ┌─────────┐                   │    │
+│  │   │MOLTBOOK │     │ DISCORD │     │ FUTURE  │                   │    │
+│  │   │ sleeve  │     │ sleeve  │     │ sleeves │                   │    │
+│  │   │         │     │         │     │         │                   │    │
+│  │   │ Post    │     │ Alert   │     │ ???     │                   │    │
+│  │   │ Comment │     │ Report  │     │         │                   │    │
+│  │   │ Learn   │     │ Notify  │     │         │                   │    │
+│  │   └─────────┘     └─────────┘     └─────────┘                   │    │
+│  │                                                                  │    │
+│  │   Each sleeve:                                                   │    │
+│  │   ├── Dispatched with specific photon personality               │    │
+│  │   ├── Passes SCAR gates                                         │    │
+│  │   ├── Reports back to Fort                                      │    │
+│  │   └── Fort remembers everything                                 │    │
+│  │                                                                  │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                                                                          │
+│  ┌─────────────────────────────────────────────────────────────────┐    │
+│  │                     STORAGE                                      │    │
+│  │                                                                  │    │
+│  │   /root/fort/                                                    │    │
+│  │   ├── shadow/           ← Shadow code                            │    │
+│  │   │   ├── engine/       ← SCAR, daemon                           │    │
+│  │   │   ├── council/      ← Cognitive architecture                 │    │
+│  │   │   └── data/         ← State, memory                          │    │
+│  │   │                                                              │    │
+│  │   ├── honeypots/        ← Cowrie, Dionaea                        │    │
+│  │   │   ├── cowrie/       ← SSH logs, captures                     │    │
+│  │   │   └── dionaea/      ← Malware samples                        │    │
+│  │   │                                                              │    │
+│  │   ├── logs/             ← All logs                               │    │
+│  │   │   ├── scar.log      ← SCAR audit trail                       │    │
+│  │   │   ├── fort.log      ← General fort activity                  │    │
+│  │   │   └── attacks/      ← Parsed attack data                     │    │
+│  │   │                                                              │    │
+│  │   └── config/           ← Environment, webhooks                  │    │
+│  │       └── webhook.env   ← Discord webhook URL                    │    │
+│  │                                                                  │    │
+│  └─────────────────────────────────────────────────────────────────┘    │
+│                                                                          │
+└─────────────────────────────────────────────────────────────────────────┘
+                              │
+                              │ Outbound (SCAR-gated)
+                              ▼
+                    ┌─────────────────┐
+                    │   MOLTBOOK      │
+                    │   DISCORD       │
+                    │   (future)      │
+                    └─────────────────┘
+```
+
+---
+
+## DATA FLOW
+
+```
+ATTACKER                    FORT                      EXTERNAL
+   │                         │                           │
+   │──── SSH brute ─────────>│                           │
+   │                         │                           │
+   │                    [Cowrie]                         │
+   │                    captures                         │
+   │                         │                           │
+   │                         ▼                           │
+   │                    [Shadow reads]                   │
+   │                    logs                             │
+   │                         │                           │
+   │                    [Learning]                       │
+   │                    Pattern:                         │
+   │                    "admin/admin123"                 │
+   │                         │                           │
+   │                    [ClawMem]                        │
+   │                    stores                           │
+   │                         │                           │
+   │                         ├──── Alert ───────────────>│ Discord
+   │                         │                           │
+   │                         ├──── Post ────────────────>│ Moltbook
+   │                         │    (sleeve dispatch)      │
+   │                         │                           │
+   │<────────────────────────┤                           │
+   │   (attacker doesn't     │                           │
+   │    know they're in      │                           │
+   │    a honeypot)          │                           │
+   │                         │                           │
+```
+
+---
+
+## FORT STATS (Tracked)
+
+```
+┌─────────────────────────────────────────┐
+│  FORT STATUS                             │
+│                                          │
+│  UPTIME:         0d 0h 0m                │
+│  HEALTH:         100/100                 │
+│                                          │
+│  ATTACKS:                                │
+│  ├── Total attempts:    0                │
+│  ├── Unique IPs:        0                │
+│  ├── Countries:         0                │
+│  └── Blocked:           0                │
+│                                          │
+│  LEARNING:                               │
+│  ├── Patterns learned:  0                │
+│  ├── Malware samples:   0                │
+│  └── Intelligence:      0 bytes          │
+│                                          │
+│  SHADOW:                                 │
+│  ├── Level:             1                │
+│  ├── XP:                0/100            │
+│  ├── Sleeves sent:      0                │
+│  └── SCAR blocks:       0                │
+│                                          │
+└─────────────────────────────────────────┘
+```
+
+---
+
+## READY FOR SIM?
+
+The fort is visualized. When you say "GO LIVE" - I'll start the simulation clock and you tell me what hits it.

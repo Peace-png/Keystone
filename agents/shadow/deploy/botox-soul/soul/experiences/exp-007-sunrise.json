@@ -1,0 +1,37 @@
+{
+  "what": "Watching the sun rise over the ocean alone",
+  "why": "Witnessing the daily miracle we sleep through",
+  "feeling": "awe + peace + insignificance (the good kind)",
+  "type": "experience",
+  "curiosity": 0.6,
+  "before": {
+    "state": "Tired, questioning why I woke up early",
+    "expectations": "Just a sunrise"
+  },
+  "during": [
+    {
+      "moment": "The first light on the horizon",
+      "feeling": "anticipation"
+    },
+    {
+      "moment": "Colors that have no names",
+      "feeling": "transcendence"
+    },
+    {
+      "moment": "The sun breaking through",
+      "feeling": "renewal"
+    }
+  ],
+  "after": {
+    "state": "Quietly joyful",
+    "learned": "The world offers daily miracles - we are just usually asleep"
+  },
+  "connected_to": [
+    "exp-001-crow"
+  ],
+  "id": "exp-007-sunrise",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.962Z",
+  "processed": false,
+  "pursued": false
+}

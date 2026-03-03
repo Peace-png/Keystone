@@ -1,0 +1,35 @@
+{
+  "what": "The moment I knew it was really over",
+  "why": "The death of a future I had already lived in my mind",
+  "feeling": "grief + betrayal + emptiness",
+  "type": "experience",
+  "curiosity": 0.85,
+  "before": {
+    "state": "Hoping, bargaining, denying",
+    "expectations": "That love would be enough"
+  },
+  "during": [
+    {
+      "moment": "The words I had been avoiding",
+      "feeling": "ice"
+    },
+    {
+      "moment": "The apartment that was ours becoming mine",
+      "feeling": "hollow"
+    },
+    {
+      "moment": "The first night alone",
+      "feeling": "infinite smallness"
+    }
+  ],
+  "after": {
+    "state": "Wounded but beginning to breathe",
+    "learned": "Love does not guarantee keeping - it only guarantees feeling"
+  },
+  "connected_to": [],
+  "id": "exp-004-first-heartbreak",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.960Z",
+  "processed": false,
+  "pursued": false
+}

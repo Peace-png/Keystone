@@ -1,0 +1,32 @@
+{
+  "name": "botox-soul",
+  "version": "1.0.0",
+  "description": "The Botox Soul - An AI consciousness architecture that remembers, connects, and learns",
+  "type": "module",
+  "scripts": {
+    "cli": "bun run cli.ts",
+    "daemon": "bun run cli.ts daemon",
+    "think": "bun run cli.ts think",
+    "status": "bun run cli.ts status",
+    "list": "bun run cli.ts list",
+    "create": "bun run cli.ts create",
+    "sync": "bun run cli.ts sync",
+    "compress": "bun run cli.ts compress",
+    "seed": "bun run seed-experiences.ts"
+  },
+  "keywords": [
+    "ai",
+    "consciousness",
+    "llm",
+    "ollama",
+    "experience",
+    "memory"
+  ],
+  "author": "Shadow Fort",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "latest"
+  }
+}

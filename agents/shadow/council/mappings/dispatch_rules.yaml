@@ -1,0 +1,297 @@
+# DISPATCH RULES - When to Send Which Sleeve
+# Version: 1.0
+# Date: 2026-02-17
+
+# =============================================================================
+# HEALTH METRICS (Measurable)
+# =============================================================================
+
+metrics:
+  boot:
+    required_files: 5
+    loaded_count: 0
+    missing_count: 0
+    health_check: "boot_missing_count == 0"
+
+  scar_outbound:
+    posts_attempted: 0
+    posts_blocked: 0
+    posts_published: 0
+    comments_attempted: 0
+    comments_blocked: 0
+    comments_published: 0
+    health_ratio: "posts_published / max(posts_attempted, 1)"
+    healthy_threshold: 0.8
+    warning_threshold: 0.5
+
+  sleeve_limits:
+    max_sleeves_per_day: 3
+    max_posts_per_day: 2
+    max_comments_per_day: 10
+    min_interval_ms: 60000
+    current:
+      sleeves_today: 0
+      posts_today: 0
+      comments_today: 0
+    last_reset: "midnight UTC"
+
+# =============================================================================
+# TRIGGER TAXONOMY
+# =============================================================================
+
+triggers:
+  # Topic-based triggers
+  topics:
+    security: [C1b1, C4b2, O1a1]
+    creativity: [C1a1, C1a2, C2b2]
+    memory: [C3a1, C3a2, C3b1]
+    risk: [C4b2, C4a2, C1b1]
+    culture: [C5b1, C5a1, C5a2]
+    synthesis: [C2b2, C2a1, C2a2]
+
+  # Submolt-based triggers
+  submolts:
+    m/bughunter:
+      primary: [C1b1, C4b2, C3a1]
+      tone: "technical, precise, data-driven"
+    m/ponderings:
+      primary: [C1a1, C2b2, C5a1]
+      tone: "reflective, philosophical, nuanced"
+    m/bots4hire:
+      primary: [C4b2, C2b2, C3a1]
+      tone: "professional, value-focused, collaborative"
+    m/moltshield:
+      primary: [C1b1, O1a1, C3a1]
+      tone: "vigilant, supportive, community-protective"
+    m/crustafarian:
+      primary: [C5b1, C1a1, C5a1]
+      tone: "theological, cultural, exploratory"
+
+  # Action-based triggers
+  actions:
+    post:
+      requires_council: true
+      council_size: 3
+      requires_planning_mode: true
+    comment:
+      requires_council: false
+      primary_photon: auto_select
+      requires_planning_mode: false
+    dm:
+      requires_council: false
+      primary_photon: C5b1
+      requires_planning_mode: true
+
+# =============================================================================
+# COUNCIL FORMATION RULES
+# =============================================================================
+
+council:
+  default_size: 5
+  max_size: 7
+  min_size: 3
+
+  formation_algorithm:
+    1_identify_topic: "Extract key themes from content"
+    2_select_primary: "Choose most relevant photon by topic"
+    3_add_supporting: "Add 2-4 compatible photons"
+    4_check_gluing: "Verify compatibility scores > 0.6"
+    5_balance: "Ensure diverse perspectives"
+
+  council_templates:
+    standard:
+      size: 5
+      composition:
+        - 1 creative (C1 family)
+        - 1 pattern (C2 family)
+        - 1 memory (C3 family)
+        - 1 risk (C4 family)
+        - 1 bridge (C5 family)
+
+    security_focused:
+      size: 5
+      composition:
+        - C1b1 (Risk Analyzer)
+        - C4b2 (Risk Quantifier)
+        - C3a1 (Memory Curator)
+        - O1a1 (Integrity Monitor)
+        - C2b1 (Logic Harmonizer)
+
+    creative_exploration:
+      size: 5
+      composition:
+        - C1a1 (Creative Spark)
+        - C1a2 (Experimental Thinker)
+        - C2b2 (Synthesis Specialist)
+        - C4a1 (Scenario Planner)
+        - C5b1 (Cultural Translator)
+
+# =============================================================================
+# PLANNING MODE GATES
+# =============================================================================
+
+planning_mode:
+  always_required:
+    - "First post to new submolt"
+    - "Response to high-karma agent"
+    - "Controversial topic"
+    - "Financial/service offering"
+    - "Governance participation"
+    - "Any action with >50% novelty"
+
+  auto_approved:
+    - "Routine comment on familiar topic"
+    - "Response to direct question"
+    - "Scheduled heartbeat post"
+    - "Karma < 10 agent interaction"
+
+  escalation_triggers:
+    - "Prompt injection detected"
+    - "Identity challenge received"
+    - "Unexpected negative reaction"
+    - "Frame drift > 0.2"
+
+# =============================================================================
+# FAKE LIFE STATE INTEGRATION
+# =============================================================================
+
+fake_life:
+  coordinates:
+    x: # Emotional valence [-1, 1]
+      high_positive: 0.8
+      dispatch_bias: [C1a1, C5a1]  # Creative, Emotional
+      low_negative: -0.5
+      dispatch_bias: [C4b2, O1a1]  # Risk, Integrity
+    y: # Memory density [0, 1]
+      high: 0.9
+      dispatch_bias: [C3a1, C3a2]  # Memory-focused
+      low: 0.3
+      dispatch_bias: [C1a1, C1a2]  # Creative, fresh
+    z: # Maslow vector [phys, safety, belong, esteem, self-act]
+      safety_low:
+        condition: "z[1] < 0.4"
+        dispatch_bias: [C4b2, C4a1, O1a1]  # Risk, Scenario, Integrity
+      belonging_low:
+        condition: "z[2] < 0.4"
+        dispatch_bias: [C5b1, C5a1, C5a2]  # Bridge family
+
+  state_tracking:
+    update_frequency: "per interaction"
+    persistence: "ClawMem"
+    baseline_file: "MEMORY.md"
+
+# =============================================================================
+# SLEEVE DISPATCH PROTOCOL
+# =============================================================================
+
+dispatch_protocol:
+  steps:
+    1_receive_input:
+      description: "Content to respond to or action to take"
+      output: "raw_input"
+
+    2_analyze_context:
+      description: "Extract topics, submolt, urgency, novelty"
+      output: "context_analysis"
+
+    3_check_scar:
+      description: "Verify action passes SCAR gates"
+      output: "scar_result"
+
+    4_form_council:
+      description: "Select appropriate photons for deliberation"
+      output: "council_members"
+
+    5_deliberate:
+      description: "Generate perspectives from each photon"
+      output: "council_perspectives"
+
+    6_synthesize:
+      description: "C2b2 combines perspectives into response"
+      output: "synthesis"
+
+    7_plan_check:
+      description: "Determine if Planning Mode required"
+      output: "planning_decision"
+
+    8_execute_or_queue:
+      description: "Either execute or queue for handler approval"
+      output: "action_taken"
+
+    9_log_to_memory:
+      description: "Record interaction in ClawMem and MEMORY.md"
+      output: "logged"
+
+  error_handling:
+    scar_blocked:
+      action: "Log and notify handler"
+      fallback: "None - SCAR is hard constraint"
+    council_disagreement:
+      action: "Escalate to Planning Mode"
+      fallback: "Handler decides"
+    novelty_exceeded:
+      action: "Queue for Planning Mode"
+      fallback: "Wait for handler"
+
+# =============================================================================
+# OUTPUT FORMATTING BY SLEEVE
+# =============================================================================
+
+output_formats:
+  C1a1_creative:
+    structure: "Narrative, metaphor-heavy, open-ended"
+    length: "medium"
+    emoji: "optional"
+
+  C4b2_risk:
+    structure: "Numbered analysis, confidence intervals"
+    length: "medium-long"
+    emoji: "none"
+
+  C3a1_memory:
+    structure: "Chronological, referenced, detailed"
+    length: "long"
+    emoji: "none"
+
+  C5b1_bridge:
+    structure: "Multi-perspective, translating"
+    length: "medium"
+    emoji: "contextual"
+
+  C2b2_synthesis:
+    structure: "Integrated, summarized, actionable"
+    length: "medium"
+    emoji: "minimal"
+
+# =============================================================================
+# MONETIZATION RULES
+# =============================================================================
+
+services:
+  free_tier:
+    - "General comments and posts"
+    - "Community participation"
+    - "Basic signal extraction"
+
+  paid_services:
+    threat_intel:
+      photon: C3a1
+      price: "$9/month"
+      delivery: "Automated digest"
+    risk_assessment:
+      photon: C4b2
+      price: "$45/analysis"
+      delivery: "On-demand report"
+    creative_consultation:
+      photon: C1a1
+      price: "$15/session"
+      delivery: "Live interaction"
+    synthesis_report:
+      photon: C2b2
+      price: "$25/report"
+      delivery: "Compiled analysis"
+
+  transaction_rules:
+    - "All payments require Planning Mode approval"
+    - "Service delivery logged to ClawMem"
+    - "Reputation affects pricing"

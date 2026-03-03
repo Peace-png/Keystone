@@ -1,0 +1,50 @@
+{"timestamp":"2026-02-17T00:15:23Z","type":"ssh","ip":"45.33.32.156","port":2222,"username":"root","password":"root","session_duration":12}
+{"timestamp":"2026-02-17T00:18:45Z","type":"ssh","ip":"185.220.101.42","port":2222,"username":"admin","password":"admin","session_duration":8}
+{"timestamp":"2026-02-17T00:22:11Z","type":"http","ip":"192.241.212.87","port":80,"path":"/wp-login.php","method":"GET"}
+{"timestamp":"2026-02-17T00:25:33Z","type":"ssh","ip":"167.99.45.201","port":2222,"username":"root","password":"password","session_duration":5}
+{"timestamp":"2026-02-17T00:31:02Z","type":"smb","ip":"159.65.78.34","port":445,"payload":"SMBv1 negotiate"}
+{"timestamp":"2026-02-17T00:35:44Z","type":"scan","ip":"178.128.99.12","port":22,"method":"SYN"}
+{"timestamp":"2026-02-17T00:38:19Z","type":"ssh","ip":"45.33.32.156","port":2222,"username":"root","password":"root","session_duration":15}
+{"timestamp":"2026-02-17T00:42:55Z","type":"http","ip":"185.220.101.67","port":8080,"path":"/.env","method":"GET"}
+{"timestamp":"2026-02-17T00:47:12Z","type":"telnet","ip":"41.213.110.179","port":23,"username":"admin","password":"admin","session_duration":3}
+{"timestamp":"2026-02-17T00:52:38Z","type":"ssh","ip":"192.241.212.87","port":2222,"username":"test","password":"test","session_duration":7}
+{"timestamp":"2026-02-17T00:58:01Z","type":"http","ip":"167.99.45.201","port":80,"path":"/phpmyadmin","method":"GET"}
+{"timestamp":"2026-02-17T01:05:22Z","type":"smb","ip":"159.65.78.34","port":445,"payload":"trans2 probe"}
+{"timestamp":"2026-02-17T01:12:45Z","type":"ssh","ip":"45.33.32.156","port":2222,"username":"root","password":"admin","session_duration":10}
+{"timestamp":"2026-02-17T01:18:33Z","type":"scan","ip":"178.128.99.12","port":445,"method":"SYN"}
+{"timestamp":"2026-02-17T01:25:17Z","type":"http","ip":"185.220.101.67","port":443,"path":"/wp-config.php.bak","method":"GET"}
+{"timestamp":"2026-02-17T01:32:48Z","type":"ssh","ip":"41.213.110.179","port":2222,"username":"ubuntu","password":"ubuntu","session_duration":4}
+{"timestamp":"2026-02-17T01:38:55Z","type":"telnet","ip":"192.241.212.87","port":2323,"username":"root","password":"xc3511","session_duration":6}
+{"timestamp":"2026-02-17T01:45:12Z","type":"http","ip":"167.99.45.201","port":80,"path":"/admin","method":"GET"}
+{"timestamp":"2026-02-17T01:52:33Z","type":"ssh","ip":"159.65.78.34","port":2222,"username":"admin","password":"123456","session_duration":8}
+{"timestamp":"2026-02-17T02:05:18Z","type":"smb","ip":"178.128.99.12","port":445,"payload":"NTLM auth attempt"}
+{"timestamp":"2026-02-17T02:15:44Z","type":"http","ip":"45.33.32.156","port":8080,"path":"/config.php","method":"GET"}
+{"timestamp":"2026-02-17T02:28:11Z","type":"ssh","ip":"185.220.101.42","port":2222,"username":"admin","password":"admin","session_duration":12}
+{"timestamp":"2026-02-17T02:35:55Z","type":"scan","ip":"167.99.45.201","port":3389,"method":"SYN"}
+{"timestamp":"2026-02-17T02:42:38Z","type":"ssh","ip":"41.213.110.179","port":2222,"username":"pi","password":"raspberry","session_duration":5}
+{"timestamp":"2026-02-17T02:55:12Z","type":"http","ip":"192.241.212.87","port":80,"path":"/backup.sql","method":"GET"}
+{"timestamp":"2026-02-17T03:05:33Z","type":"telnet","ip":"159.65.78.34","port":23,"username":"admin","password":"admin123","session_duration":4}
+{"timestamp":"2026-02-17T03:18:45Z","type":"ssh","ip":"178.128.99.12","port":2222,"username":"oracle","password":"oracle","session_duration":7}
+{"timestamp":"2026-02-17T03:32:18Z","type":"smb","ip":"45.33.32.156","port":139,"payload":"NetBIOS probe"}
+{"timestamp":"2026-02-17T03:45:55Z","type":"http","ip":"185.220.101.67","port":80,"path":"/.git/config","method":"GET"}
+{"timestamp":"2026-02-17T04:02:12Z","type":"ssh","ip":"167.99.45.201","port":2222,"username":"user","password":"user","session_duration":6}
+{"timestamp":"2026-02-17T04:15:38Z","type":"scan","ip":"41.213.110.179","port":8080,"method":"SYN"}
+{"timestamp":"2026-02-17T04:32:44Z","type":"ssh","ip":"192.241.212.87","port":2222,"username":"root","password":"root","session_duration":9}
+{"timestamp":"2026-02-17T04:48:15Z","type":"http","ip":"159.65.78.34","port":443,"path":"/wp-login.php","method":"GET"}
+{"timestamp":"2026-02-17T05:05:22Z","type":"telnet","ip":"178.128.99.12","port":23,"username":"root","password":"default","session_duration":3}
+{"timestamp":"2026-02-17T05:18:55Z","type":"ssh","ip":"45.33.32.156","port":2222,"username":"root","password":"password","session_duration":11}
+{"timestamp":"2026-02-17T05:32:18Z","type":"smb","ip":"185.220.101.42","port":445,"payload":"EternalBlue probe"}
+{"timestamp":"2026-02-17T05:45:33Z","type":"http","ip":"167.99.45.201","port":80,"path":"/phpmyadmin","method":"GET"}
+{"timestamp":"2026-02-17T06:02:45Z","type":"scan","ip":"192.241.212.87","port":21,"method":"SYN"}
+{"timestamp":"2026-02-17T06:18:12Z","type":"ssh","ip":"41.213.110.179","port":2222,"username":"admin","password":"admin","session_duration":8}
+{"timestamp":"2026-02-17T06:35:55Z","type":"http","ip":"159.65.78.34","port":8080,"path":"/.env","method":"GET"}
+{"timestamp":"2026-02-17T06:52:33Z","type":"ssh","ip":"178.128.99.12","port":2222,"username":"root","password":"admin","session_duration":6}
+{"timestamp":"2026-02-17T07:08:18Z","type":"telnet","ip":"45.33.32.156","port":2323,"username":"admin","password":"admin","session_duration":5}
+{"timestamp":"2026-02-17T07:25:44Z","type":"smb","ip":"185.220.101.67","port":445,"payload":"SMBv1 negotiate"}
+{"timestamp":"2026-02-17T07:42:55Z","type":"http","ip":"167.99.45.201","port":80,"path":"/admin","method":"GET"}
+{"timestamp":"2026-02-17T08:05:12Z","type":"ssh","ip":"192.241.212.87","port":2222,"username":"test","password":"test","session_duration":4}
+{"timestamp":"2026-02-17T08:22:38Z","type":"scan","ip":"41.213.110.179","port":1433,"method":"SYN"}
+{"timestamp":"2026-02-17T08:38:55Z","type":"ssh","ip":"159.65.78.34","port":2222,"username":"root","password":"root","session_duration":10}
+{"timestamp":"2026-02-17T08:55:18Z","type":"http","ip":"178.128.99.12","port":80,"path":"/wp-config.php.bak","method":"GET"}
+{"timestamp":"2026-02-17T09:12:44Z","type":"telnet","ip":"45.33.32.156","port":23,"username":"root","password":"vizxv","session_duration":3}
+{"timestamp":"2026-02-17T09:28:33Z","type":"smb","ip":"185.220.101.42","port":139,"payload":"trans2 probe"}

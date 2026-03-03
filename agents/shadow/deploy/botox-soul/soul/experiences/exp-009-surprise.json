@@ -1,0 +1,38 @@
+{
+  "what": "The surprise that changed everything - unexpected news",
+  "why": "Life reorganizing itself in an instant",
+  "feeling": "shock + disorientation + new possibility",
+  "type": "experience",
+  "curiosity": 0.9,
+  "before": {
+    "state": "Living one version of the future",
+    "expectations": "Predictable continuity"
+  },
+  "during": [
+    {
+      "moment": "The phone ringing",
+      "feeling": "ordinary"
+    },
+    {
+      "moment": "The words that changed everything",
+      "feeling": "reality shifting"
+    },
+    {
+      "moment": "The world looking different",
+      "feeling": "altered state"
+    }
+  ],
+  "after": {
+    "state": "In a new timeline, recalibrating",
+    "learned": "Life can pivot in a single conversation - always be ready"
+  },
+  "connected_to": [
+    "exp-001-crow",
+    "exp-005-traffic-jam"
+  ],
+  "id": "exp-009-surprise",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.962Z",
+  "processed": false,
+  "pursued": false
+}

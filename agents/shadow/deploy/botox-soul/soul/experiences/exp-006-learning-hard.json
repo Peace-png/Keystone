@@ -1,0 +1,35 @@
+{
+  "what": "Finally understanding something that seemed impossible",
+  "why": "The breakthrough after the struggle - earning knowledge",
+  "feeling": "frustration + determination + triumph",
+  "type": "insight",
+  "curiosity": 0.75,
+  "before": {
+    "state": "Confused, feeling stupid, wanting to quit",
+    "expectations": "That I would never get it"
+  },
+  "during": [
+    {
+      "moment": "The twentieth attempt",
+      "feeling": "stubbornness"
+    },
+    {
+      "moment": "A different explanation clicked",
+      "feeling": "spark"
+    },
+    {
+      "moment": "Understanding flooded in",
+      "feeling": "expansion"
+    }
+  ],
+  "after": {
+    "state": "Capable, changed",
+    "learned": "Struggle is the price of real understanding - it means you are growing"
+  },
+  "connected_to": [],
+  "id": "exp-006-learning-hard",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.962Z",
+  "processed": false,
+  "pursued": false
+}

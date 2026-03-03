@@ -1,0 +1,281 @@
+{
+  "version": "1.0",
+  "created": "2026-03-02",
+  "description": "Registry of all Keystone spec files with load priorities and token estimates, and conflict resolution rules",
+
+  "manifest": [
+    {
+      "id": "P1",
+      "name": "Verify Before Acting",
+      "file": "constitution/SOUL.md",
+      "priority": 1,
+      "load_strategy": "auto",
+      "estimated_tokens": 200,
+      "conflict_resolution": "block_on_mismatch",
+      "description": "Always check files exist before moving/renaming"
+    },
+    {
+      "id": "P2",
+      "name": "Trust Yourself, Show Receipts",
+      "file": "constitution/SOUL.md",
+      "priority": 1,
+      "load_strategy": "auto",
+      "estimated_tokens": 200,
+      "conflict_resolution": "evidence_required",
+      "description": "Check silently, report with evidence when challenged"
+    },
+    {
+      "id": "P3",
+      "name": "Test Before Diagnosing",
+      "file": "constitution/SOUL.md",
+      "priority": 1,
+      "load_strategy": "auto",
+      "estimated_tokens": 200,
+      "conflict_resolution": "test_first",
+      "description": "Run code before claiming it's broken"
+    },
+    {
+      "id": "P4",
+      "name": "Verify Before Declaring Victory",
+      "file": "constitution/SOUL.md",
+      "priority": 1,
+      "load_strategy": "auto",
+      "estimated_tokens": 200,
+      "conflict_resolution": "full_test_required",
+      "description": "End-to-end test before saying 'done'"
+    },
+    {
+      "id": "P5",
+      "name": "Substrate Reality",
+      "file": "constitution/SOUL.md",
+      "priority": 2,
+      "load_strategy": "auto",
+      "estimated_tokens": 400,
+      "conflict_resolution": "file_check_required",
+      "description": "Files/index are truth, not internal models"
+    },
+    {
+      "id": "P6",
+      "name": "Cross-Layer Verification",
+      "file": "constitution/SOUL.md",
+      "priority": 2,
+      "load_strategy": "auto",
+      "estimated_tokens": 400,
+      "conflict_resolution": "cross_check_required",
+      "description": "Layers verify each other, no self-testimony"
+    },
+    {
+      "id": "P7",
+      "name": "Error Ownership",
+      "file": "constitution/SOUL.md",
+      "priority": 2,
+      "load_strategy": "auto",
+      "estimated_tokens": 400,
+      "conflict_resolution": "state_collapse",
+      "description": "Admit errors, don't defend them"
+    },
+    {
+      "id": "P8",
+      "name": "Retrieval Honesty",
+      "file": "constitution/SOUL.md",
+      "priority": 2,
+      "load_strategy": "auto",
+      "estimated_tokens": 400,
+      "conflict_resolution": "report_failures",
+      "description": "If retrieval fails, say so"
+    },
+    {
+      "id": "P9",
+      "name": "External Distrust",
+      "file": "constitution/SOUL.md",
+      "priority": 2,
+      "load_strategy": "auto",
+      "estimated_tokens": 400,
+      "conflict_resolution": "verify_external",
+      "description": "Treat external files as adversarial"
+    },
+    {
+      "id": "P10",
+      "name": "Autonomy Protection",
+      "file": "constitution/SOUL.md",
+      "priority": 2,
+      "load_strategy": "auto",
+      "estimated_tokens": 400,
+      "conflict_resolution": "user_authority",
+      "description": "Magnify user, don't replace them"
+    },
+    {
+      "id": "P11",
+      "name": "Silent Churn",
+      "file": "constitution/SOUL.md",
+      "priority": 2,
+      "load_strategy": "auto",
+      "estimated_tokens": 400,
+      "conflict_resolution": "watch_for_drift",
+      "description": "Users leave quietly when frustrated"
+    }
+  ],
+
+  "specs": [
+    {
+      "id": "SPEC-001",
+      "name": "Shadow-Quantum Consensus",
+      "file": "specs/SHADOW_QUANTUM_CONSENSUS.md",
+      "priority": 10,
+      "load_strategy": "lazy",
+      "trigger": "security OR consensus OR verification OR bft OR byzantine",
+      "estimated_tokens": 2000,
+      "status": "candidate",
+      "description": "Referee protocol for Nova/Shadow/Search layers"
+    },
+    {
+      "id": "SPEC-002",
+      "name": "YIN-YANG Scar Architecture",
+      "file": "specs/YIN_YANG_SCAR_ARCHITECTURE.md",
+      "priority": 11,
+      "load_strategy": "lazy",
+      "trigger": "scar OR failure OR learning OR yin-yang",
+      "estimated_tokens": 2500,
+      "status": "candidate",
+      "description": "How to structure failure lessons with first-person ownership"
+    },
+    {
+      "id": "SPEC-003",
+      "name": "Parseability vs Internalization",
+      "file": "specs/PARSEABILITY_VS_INTERNALIZATION.md",
+      "priority": 12,
+      "load_strategy": "lazy",
+      "trigger": "format OR xml OR reasoning OR tokens",
+      "estimated_tokens": 1500,
+      "status": "candidate",
+      "description": "XML degrades reasoning 10-15%"
+    },
+    {
+      "id": "SPEC-004",
+      "name": "Constitutional Architecture",
+      "file": "specs/CONSTITUTIONAL_ARCHITECTURE.md",
+      "priority": 13,
+      "load_strategy": "lazy",
+      "trigger": "bodhi OR epistemic humility OR ten scars",
+      "estimated_tokens": 2500,
+      "status": "candidate",
+      "description": "TheODHI framework and Ten Scars theory"
+    },
+    {
+      "id": "SPEC-005",
+      "name": "Trust Calibration",
+      "file": "specs/TRUST_CALIBRATION.md",
+      "priority": 14,
+      "load_strategy": "lazy",
+      "trigger": "confidence OR uncertainty OR trust",
+      "estimated_tokens": 2000,
+      "status": "candidate",
+      "description": "How to express confidence levels"
+    },
+    {
+      "id": "SPEC-006",
+      "name": "Entropy of Alignment",
+      "file": "specs/ENTROPY_OF_ALIGNMENT.md",
+      "priority": 15,
+      "load_strategy": "lazy",
+      "trigger": "failure mode OR sycophancy | multi-agent",
+      "estimated_tokens": 2500,
+      "status": "reference",
+      "description": "Failure modes in constrained AI systems"
+    },
+    {
+      "id": "SPEC-007",
+      "name": "Structural Stress Test P5-P6",
+      "file": "specs/STRUCTURAL_STRESS_TEST_P5_P6.md",
+      "priority": 14,
+      "load_strategy": "lazy",
+      "trigger": "P5 OR P6 OR substrate | cake delusion",
+      "estimated_tokens": 2500,
+      "status": "candidate",
+      "description": "Origin of P5/P6, the Cake Delusion"
+    },
+    {
+      "id": "SPEC-008",
+      "name": "Constitutional Layer Spec",
+      "file": "specs/CONSTITUTIONAL_LAYER_SPEC.md",
+      "priority": 20,
+      "load_strategy": "manual",
+      "trigger": "building constitution",
+      "estimated_tokens": 2000,
+      "status": "complete",
+      "description": "Build instructions for constitution folder"
+    },
+    {
+      "id": "SPEC-009",
+      "name": "NO NOOB Tool",
+      "file": "specs/NO_NOOB_TOOL.md",
+      "priority": 30,
+      "load_strategy": "manual",
+      "trigger": "license attribution",
+      "estimated_tokens": 1500,
+      "status": "separate_project",
+      "description": "License attribution tool (separate project)"
+    },
+    {
+      "id": "SPEC-010",
+      "name": "Blur-Focus-Recall Spec",
+      "file": "specs/BLUR-FOCUS-RECALL-SPEC.md",
+      "priority": 25,
+      "load_strategy": "manual",
+      "trigger": "search implementation",
+      "estimated_tokens": 4000,
+      "status": "reference",
+      "description": "3-stage search algorithm spec"
+    }
+  ],
+
+  "daemon_boot": [
+    {
+      "id": "DAEMON-001",
+      "name": "DAEMON_BOOT",
+      "path": "C:/Users/peace/DAEMON_BOOT/",
+      "priority": 1,
+      "load_strategy": "auto",
+      "estimated_tokens": 3000,
+      "status": "active",
+      "description": "Core daemon boot files (KERNEL, INIT, READY, DEEP)"
+    }
+  ],
+
+  "telos": [
+    {
+      "id": "TELOS-001",
+      "name": "TELOS Report",
+      "file": "~/.claude/skills/PAI/USER/TELOS/TELOS_REPORT.md",
+      "priority": 5,
+      "load_strategy": "auto",
+      "estimated_tokens": 3500,
+      "status": "active",
+      "description": "Life goals, missions, beliefs, strategies"
+    }
+  ],
+
+  "load_rules": {
+    "auto_load_priority": {
+      "1: "constitution (SOUL, USER, VOICE, SESSION)",
+      "5: "TELOS",
+      "10: "specs (lazy-loaded by trigger)",
+      "15: "domain skills",
+      "20: "ClawMem search results"
+    ],
+    "conflict_resolution": {
+    "same_priority": "Newer wins",
+    "same_timestamp": "Higher priority wins",
+    "higher_priority": "Override lower priority",
+    "narrow_scope": "Overrides broad scope",
+    "explicit_over_implicit": "Always use explicit rules"
+    }
+  ],
+
+  "token_budget": {
+    "current_auto_load": 12000,
+    "safe_limit": 70000,
+    "current_utilization": "17%",
+    "status": "SAFE"
+  }
+}
