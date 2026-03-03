@@ -1,0 +1,35 @@
+{
+  "what": "A crow landed on my windowsill and looked directly at me",
+  "why": "It felt like a message - like the universe was trying to tell me something",
+  "feeling": "wonder + curiosity + connection to nature",
+  "type": "experience",
+  "curiosity": 0.9,
+  "before": {
+    "state": "Ordinary morning, coffee in hand, nothing special",
+    "expectations": "Just another day"
+  },
+  "during": [
+    {
+      "moment": "Wing beats outside the window",
+      "feeling": "surprise"
+    },
+    {
+      "moment": "It landed and turned its head",
+      "feeling": "intensity"
+    },
+    {
+      "moment": "Our eyes met for three heartbeats",
+      "feeling": "recognition"
+    }
+  ],
+  "after": {
+    "state": "Changed. The ordinary had become magical",
+    "learned": "Messages come in unexpected forms"
+  },
+  "connected_to": [],
+  "id": "exp-001-crow",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.958Z",
+  "processed": false,
+  "pursued": false
+}

@@ -1,0 +1,37 @@
+{
+  "what": "The first drop of the roller coaster - that weightless second",
+  "why": "Pure fear transformed into joy - the alchemy of surrender",
+  "feeling": "fear + exhilaration + freedom",
+  "type": "experience",
+  "curiosity": 0.8,
+  "before": {
+    "state": "Regret. Why did I agree to this?",
+    "expectations": "Terror and wanting it to be over"
+  },
+  "during": [
+    {
+      "moment": "The click-click-click of the climb",
+      "feeling": "dread"
+    },
+    {
+      "moment": "The pause at the top",
+      "feeling": "suspended time"
+    },
+    {
+      "moment": "The drop - weightlessness",
+      "feeling": "absolute freedom"
+    }
+  ],
+  "after": {
+    "state": "Alive. Giddy. Wanting to go again",
+    "learned": "Fear and joy are neighbors - surrender bridges them"
+  },
+  "connected_to": [
+    "exp-001-crow"
+  ],
+  "id": "exp-002-rollercoaster",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.960Z",
+  "processed": false,
+  "pursued": false
+}

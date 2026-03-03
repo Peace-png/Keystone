@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "description": "Active and completed jobs for Zero Day Services",
+  "active_jobs": [],
+  "completed_jobs": [
+    {
+      "id": "job_20260215_DEM",
+      "customer": {
+        "platform": "local",
+        "user_id": "peace",
+        "username": "peace"
+      },
+      "service": "research",
+      "request": "What are the core mechanics of how religions spread, establish authority, and monetize - specifically: conversion tactics, ritual structures, prophecy systems, and hierarchy building? Focus on what's repeatable without requiring genuine belief.",
+      "complexity": "complex",
+      "price": 0,
+      "status": "completed",
+      "payment": {
+        "method": "credits",
+        "transaction_id": "demo",
+        "paid_at": "2026-02-15T00:00:00.000Z"
+      },
+      "timeline": {
+        "requested_at": "2026-02-15T00:00:00.000Z",
+        "quoted_at": "2026-02-15T00:00:01.000Z",
+        "paid_at": "2026-02-15T00:00:02.000Z",
+        "started_at": "2026-02-15T00:00:03.000Z",
+        "delivered_at": "2026-02-15T00:30:00.000Z",
+        "completed_at": "2026-02-15T00:31:00.000Z"
+      },
+      "deliverable": "/home/peace/clawd/agents/shadow/research/RELIGIOUS_MECHANICS.md",
+      "rating": null,
+      "feedback": null
+    }
+  ],
+  "stats": {
+    "total_jobs": 1,
+    "total_revenue": 0,
+    "total_refunds": 0,
+    "average_rating": 0,
+    "customers": ["peace"]
+  },
+  "job_template": {
+    "id": "job_YYYYMMDD_###",
+    "customer": {
+      "platform": "discord|telegram|matrix|etc",
+      "user_id": "original_user_id",
+      "username": "display_name"
+    },
+    "service": "research|security|automation|specialized",
+    "request": "The actual request text",
+    "complexity": "simple|standard|complex",
+    "price": 5,
+    "status": "pending|quoted|paid|in_progress|delivered|completed|refunded",
+    "payment": {
+      "method": "stripe|paypal|crypto|credits",
+      "transaction_id": null,
+      "paid_at": null
+    },
+    "timeline": {
+      "requested_at": "ISO timestamp",
+      "quoted_at": null,
+      "paid_at": null,
+      "started_at": null,
+      "delivered_at": null,
+      "completed_at": null
+    },
+    "deliverable": null,
+    "rating": null,
+    "feedback": null
+  }
+}

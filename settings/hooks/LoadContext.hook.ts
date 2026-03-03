@@ -392,10 +392,9 @@ async function loadConstitution(): Promise<string> {
       const filePath = join(constitutionDir, file);
       if (existsSync(filePath)) {
         const content = readFileSync(filePath, 'utf-8');
-        // Truncate each file to 2000 chars to avoid token overflow
-        const truncated = content.length > 2000 ? content.substring(0, 2000) + '\n... (truncated)' : content;
-        output += `\n--- ${file} ---\n${truncated}\n`;
-        console.error(`✅ Loaded constitution: ${file}`);
+        // Constitution files must load fully - scars are at the END of each principle
+        output += `\n--- ${file} ---\n${content}\n`;
+        console.error(`✅ Loaded constitution: ${file} (${content.length} chars)`);
       }
     }
 

@@ -1,0 +1,30 @@
+[Unit]
+Description=Shadow Fort - Autonomous Security Agent
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/fort/shadow
+ExecStart=/usr/bin/bun run engine/shadow-daemon.ts start
+ExecStop=/usr/bin/bun run engine/shadow-daemon.ts stop
+Restart=always
+RestartSec=10
+StandardOutput=append:/root/fort/shadow/logs/fort.log
+StandardError=append:/root/fort/shadow/logs/fort.log
+
+# Environment
+Environment=NODE_ENV=production
+Environment=SHADOW_FORT_MODE=daemon
+
+# Resource limits
+MemoryMax=1G
+CPUQuota=50%
+
+# Security
+NoNewPrivileges=false
+# (needs privileges for Docker interaction)
+
+[Install]
+WantedBy=multi-user.target

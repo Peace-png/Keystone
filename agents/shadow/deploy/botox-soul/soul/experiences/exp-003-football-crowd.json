@@ -1,0 +1,35 @@
+{
+  "what": "Being part of a stadium crowd when the goal was scored",
+  "why": "Individual identity dissolved into collective joy",
+  "feeling": "belonging + ecstasy + unity",
+  "type": "experience",
+  "curiosity": 0.7,
+  "before": {
+    "state": "Just me, in my seat, holding my drink",
+    "expectations": "A game, maybe some excitement"
+  },
+  "during": [
+    {
+      "moment": "The ball arcing toward the net",
+      "feeling": "hope"
+    },
+    {
+      "moment": "The roar beginning",
+      "feeling": "electricity"
+    },
+    {
+      "moment": "Hugging strangers",
+      "feeling": "complete connection"
+    }
+  ],
+  "after": {
+    "state": "Hoarse, happy, part of something bigger",
+    "learned": "We are not separate - we just forget"
+  },
+  "connected_to": [],
+  "id": "exp-003-football-crowd",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.960Z",
+  "processed": false,
+  "pursued": false
+}

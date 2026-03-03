@@ -58,7 +58,7 @@ if not exist "%BUN_EXE%" (
 
 :: Health check tracking
 set HEALTHY_COUNT=0
-set TOTAL_CHECKS=4
+set TOTAL_CHECKS=6
 
 :: Step 1: Start Ollama for GPU
 echo  %ESC%[90m[%ESC%[0m%ESC%[97m1%ESC%[0m%ESC%[90m/%ESC%[0m%ESC%[97m4%ESC%[0m%ESC%[90m]%ESC%[0m Checking Ollama (GPU)...
@@ -88,7 +88,11 @@ start "Keystone Core" /MIN cmd /c "cd /d %KEYSTONE_AGENTS% && %ENV_VARS% && set 
 timeout /t 1 /nobreak > nul
 start "Keystone Search" /MIN cmd /c "cd /d %KEYSTONE_AGENTS% && %ENV_VARS% && %BUN_EXE% run clawmem-daemon.ts start"
 timeout /t 1 /nobreak > nul
-start "Keystone Shadow" /MIN cmd /c "cd /d %KEYSTONE_AGENTS% && %ENV_VARS% && %BUN_EXE% run agents/shadow/engine/shadow-daemon.ts start"
+start "Keystone Shadow" /MIN cmd /c "cd /d %KEYSTONE_AGENTS% && %ENV_VARS% && %BUN_EXE% run shadow/engine/shadow-daemon.ts start"
+timeout /t 1 /nobreak > nul
+start "Keystone Firewall" /MIN cmd /c "cd /d %KEYSTONE_AGENTS% && %ENV_VARS% && %BUN_EXE% run cognitive-firewall.ts start"
+timeout /t 1 /nobreak > nul
+start "Keystone SCAR" /MIN cmd /c "cd /d %KEYSTONE_AGENTS% && %ENV_VARS% && %BUN_EXE% run scar-daemon.ts start"
 echo         Services launched, verifying...
 
 :: Wait for services to initialize
@@ -98,6 +102,8 @@ timeout /t 3 /nobreak > nul
 set CORE_OK=0
 set SEARCH_OK=0
 set SHADOW_OK=0
+set FIREWALL_OK=0
+set SCAR_OK=0
 
 :: Check Core (pai-daemon)
 tasklist /FI "WINDOWTITLE eq Keystone Core*" 2>NUL | find /I "cmd.exe">NUL
@@ -128,6 +134,34 @@ if "%ERRORLEVEL%"=="0" (
 ) else (
     echo         %ESC%[91mShadow service    FAILED%ESC%[0m
 )
+
+:: Check Firewall (cognitive-firewall)
+tasklist /FI "WINDOWTITLE eq Keystone Firewall*" 2>NUL | find /I "cmd.exe">NUL
+if "%ERRORLEVEL%"=="0" (
+    echo         Firewall service  %ESC%[92mOK%ESC%[0m
+    set /a HEALTHY_COUNT+=1
+    set FIREWALL_OK=1
+) else (
+    echo         %ESC%[91mFirewall service  FAILED%ESC%[0m
+)
+
+:: Check SCAR (scar-daemon) - wait up to 10s for heartbeat
+set SCAR_OK=0
+set SCAR_WAIT=0
+:scar_wait_loop
+if exist "%KEYSTONE_AGENTS%\scar-daemon\heartbeat" (
+    echo         SCAR service      %ESC%[92mOK%ESC%[0m
+    set /a HEALTHY_COUNT+=1
+    set SCAR_OK=1
+    goto :scar_done
+)
+set /a SCAR_WAIT+=1
+if %SCAR_WAIT% LSS 10 (
+    timeout /t 1 /nobreak > nul
+    goto :scar_wait_loop
+)
+echo         %ESC%[91mSCAR service      FAILED%ESC%[0m
+:scar_done
 
 :: Step 3: Final health summary
 echo.

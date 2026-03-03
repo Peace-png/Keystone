@@ -1,0 +1,35 @@
+{
+  "what": "Birth is like falling from a plane - container failure and ejection",
+  "why": "Mapping one primal fear onto another - the original fear template",
+  "feeling": "fear + disorientation + primal recognition",
+  "type": "insight",
+  "curiosity": 0.95,
+  "before": {
+    "state": "Contemplating the nature of fear",
+    "expectations": "Academic understanding"
+  },
+  "during": [
+    {
+      "moment": "The parallel appeared",
+      "feeling": "insight"
+    },
+    {
+      "moment": "Both are container failure",
+      "feeling": "recognition"
+    },
+    {
+      "moment": "Birth trauma as template",
+      "feeling": "depth"
+    }
+  ],
+  "after": {
+    "state": "Understanding fear differently",
+    "learned": "Some fears are not learned - they are inherited from birth. The first template."
+  },
+  "connected_to": [],
+  "id": "exp-011-womb-plane-fear",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.963Z",
+  "processed": false,
+  "pursued": false
+}

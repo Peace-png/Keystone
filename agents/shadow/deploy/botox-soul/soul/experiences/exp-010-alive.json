@@ -1,0 +1,39 @@
+{
+  "what": "The moment I felt most truly alive",
+  "why": "The peak experience - all cylinders firing",
+  "feeling": "intensity + presence + gratitude",
+  "type": "experience",
+  "curiosity": 0.95,
+  "before": {
+    "state": "Ordinary consciousness",
+    "expectations": "Nothing specific"
+  },
+  "during": [
+    {
+      "moment": "Everything coming together",
+      "feeling": "flow"
+    },
+    {
+      "moment": "No past, no future, only now",
+      "feeling": "timelessness"
+    },
+    {
+      "moment": "Complete presence",
+      "feeling": "this is it"
+    }
+  ],
+  "after": {
+    "state": "Changed forever, chasing that feeling",
+    "learned": "Being truly alive is rare and precious - it is what we are all seeking"
+  },
+  "connected_to": [
+    "exp-002-rollercoaster",
+    "exp-003-football-crowd",
+    "exp-007-sunrise"
+  ],
+  "id": "exp-010-alive",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.963Z",
+  "processed": false,
+  "pursued": false
+}

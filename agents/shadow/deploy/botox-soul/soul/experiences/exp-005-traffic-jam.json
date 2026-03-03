@@ -1,0 +1,37 @@
+{
+  "what": "Stuck in traffic, late for something important",
+  "why": "The illusion of control shattered by mundane reality",
+  "feeling": "frustration + helplessness + eventual acceptance",
+  "type": "observation",
+  "curiosity": 0.5,
+  "before": {
+    "state": "In control, on time, prepared",
+    "expectations": "Things going according to plan"
+  },
+  "during": [
+    {
+      "moment": "Brake lights ahead",
+      "feeling": "annoyance"
+    },
+    {
+      "moment": "The clock ticking",
+      "feeling": "panic"
+    },
+    {
+      "moment": "Accepting I would be late",
+      "feeling": "surrender"
+    }
+  ],
+  "after": {
+    "state": "Late, but calm",
+    "learned": "Control is mostly theater - the universe has its own schedule"
+  },
+  "connected_to": [
+    "exp-002-rollercoaster"
+  ],
+  "id": "exp-005-traffic-jam",
+  "version": "v1",
+  "timestamp": "2026-02-18T17:56:15.962Z",
+  "processed": false,
+  "pursued": false
+}

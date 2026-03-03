@@ -1,0 +1,46 @@
+# Shadow .gitignore
+
+# Credentials - NEVER COMMIT
+config/credentials.json
+config/*.env
+*.pem
+*.key
+.env
+.env.*
+
+# Data files (regenerated)
+data/*.json
+data/memory/*.json
+data/guild/*.json
+logs/
+*.log
+
+# Node
+node_modules/
+.bun/
+
+# Build outputs
+dist/
+*.js
+*.js.map
+!deploy/*.sh
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.temp
+.cache/
+
+# Claude
+.claude/settings.local.json
+
+# Credentials template is OK
+!config-template.env
