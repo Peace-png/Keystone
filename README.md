@@ -1,6 +1,7 @@
-# Keystone AI Infrastructure
+# Keystone
+### A constitutional AI framework with a soul
 
-> One folder. Complete AI system. Zero cloud dependency.
+One folder. Your machine. AI that remembers.
 
 **Keystone** is a self-contained AI infrastructure that runs entirely on your machine. It combines semantic search, autonomous agents, and persistent memory in a single, portable folder.
 
