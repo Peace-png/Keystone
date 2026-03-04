@@ -204,6 +204,16 @@ Contributions welcome. Please read the contributing guidelines first.
 
 [MIT License](LICENSE)
 
+## Version History
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes.
+
+| Version | Focus |
+|---------|-------|
+| [0.3.0] | SCAR conscience system |
+| [0.2.0] | ClawMem integration |
+| [0.1.0] | Core boot system |
+
 ## Acknowledgements
 
 This project was influenced by:
