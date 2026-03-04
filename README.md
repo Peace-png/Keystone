@@ -80,19 +80,33 @@ SEARCH.bat status
 ## Architecture
 
 ```
-Keystone/
-├── core/           # AI identity, skills, persona
-├── agents/         # Background services & SCAR rules
-├── search/         # Semantic search engine
-├── knowledge/      # PARA knowledge base
-│   ├── 1-projects/ # Active work
-│   ├── 2-areas/    # Responsibilities
-│   ├── 3-resources/# Reference material
-│   └── 4-archive/  # Inactive items
-├── settings/       # Configuration
-├── database/       # Search index
-└── memory/         # Persistent memory
+KEYSTONE INFRASTRUCTURE
+│
+├── BOOT LAYER
+│   └── START-KEYSTONE.cmd → CHECK_IDENTITY.bat → 5 Services
+│
+├── SERVICE LAYER
+│   ├── CORE      (pai-daemon.ts)      — Unified engine orchestrator
+│   ├── SEARCH    (clawmem-daemon.ts)  — GPU-accelerated memory
+│   ├── SHADOW    (shadow-daemon.ts)   — Security operations
+│   ├── FIREWALL  (cognitive-firewall) — Input filtering
+│   └── SCAR      (scar-daemon.ts)     — Principle enforcement
+│
+├── COGNITIVE LAYER
+│   └── SCAR matches EVENTS → returns advisories
+│
+├── REFLECTION LAYER
+│   └── Session checkpoint → SCAR advisories → SESSION.md
+│
+└── MEMORY LAYER
+    ├── ClawMem Index    — Vector + graph memory
+    ├── constitution/    — SOUL.md / USER.md / SESSION.md
+    └── PARKING_LOT.md   — Open issues
+
+Pipeline: BOOT → SERVICES → EVENTS → SCAR → MEMORY
 ```
+
+See [specs/SERVICE_TREE_CURRENT.md](specs/SERVICE_TREE_CURRENT.md) for full architecture details.
 
 ## Features
 
