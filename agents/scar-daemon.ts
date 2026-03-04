@@ -36,6 +36,23 @@ interface Scar {
   triggers: string[];   // Keywords that should trigger this scar
   origin: string;       // Where it came from
   level: string;        // consequence level
+
+  // Phase 1: Full scar context (data-only, not yet used in matching)
+  yin?: string;         // The specific mistake / wound
+  yang?: string;        // The consequence / harm caused
+  constraints?: string[]; // Repair rules derived from the scar
+  remember?: string;    // Optional narrative / quote
+}
+
+/**
+ * Phase 2: Advisory context returned with match results
+ * This allows consumers to understand WHY the scar matters
+ */
+interface ScarAdvisory {
+  wound?: string;        // The yin - what went wrong before
+  consequence?: string;  // The yang - what harm it caused
+  checks?: string[];     // The constraints - what to verify
+  remember?: string;     // The narrative/quote to keep in mind
 }
 
 interface MatchResult {
@@ -43,6 +60,9 @@ interface MatchResult {
   scar?: Scar;
   relevance: number;  // 0-1
   reason: string;
+
+  // Phase 2: Enriched advisory context (optional, only when matched)
+  advisory?: ScarAdvisory;
 }
 
 interface DaemonState {
@@ -90,12 +110,41 @@ function parseScars(content: string): Scar[] {
     const levelMatch = block.match(/\*\*CONSEQUENCE LEVEL:\*\* (.+)/);
     const level = levelMatch ? levelMatch[1] : 'Medium';
 
+    // Phase 1: Extract full scar context (YIN/YANG/CONSTRAINTS/Remember)
+    const yinMatch = block.match(/\*\*YIN — What I did:\*\*\s*([\s\S]*?)(?=\*\*YANG|\*\*ORIGIN|\*\*CONSEQUENCE|$)/);
+    const yangMatch = block.match(/\*\*YANG — What (?:that |it )?caused:\*\*\s*([\s\S]*?)(?=\*\*ORIGIN|\*\*CONSEQUENCE|\*\*CONSTRAINTS|\*\*Remember|---|$)/);
+    const constraintsMatch = block.match(/\*\*CONSTRAINTS:\*\*\s*([\s\S]*?)(?=\*\*Remember|---|###|$)/);
+    const rememberMatch = block.match(/\*\*Remember:\*\*\s*> (.+)/);
+
+    const yin = yinMatch ? yinMatch[1].trim() : undefined;
+    const yang = yangMatch ? yangMatch[1].trim() : undefined;
+
+    // Parse constraints as array (numbered list items)
+    let constraints: string[] | undefined;
+    if (constraintsMatch) {
+      const constraintText = constraintsMatch[1];
+      const constraintLines = constraintText.split('\n')
+        .map(line => line.trim())
+        .filter(line => /^\d+\./.test(line))  // Only numbered items
+        .map(line => line.replace(/^\d+\.\s*/, '').trim());
+      if (constraintLines.length > 0) {
+        constraints = constraintLines;
+      }
+    }
+
+    const remember = rememberMatch ? rememberMatch[1].trim() : undefined;
+
     scars.push({
       id,
       rule,
       triggers,
       origin,
-      level
+      level,
+      // Phase 1: Full context (optional fields)
+      ...(yin && { yin }),
+      ...(yang && { yang }),
+      ...(constraints && { constraints }),
+      ...(remember && { remember })
     });
   }
 
@@ -243,11 +292,22 @@ class SCARDaemon {
 
       this.log('MATCH', bestMatch.reason);
 
+      // Phase 2: Build advisory context from the matched scar
+      const advisory: ScarAdvisory = {};
+      if (bestMatch.scar.yin) advisory.wound = bestMatch.scar.yin;
+      if (bestMatch.scar.yang) advisory.consequence = bestMatch.scar.yang;
+      if (bestMatch.scar.constraints && bestMatch.scar.constraints.length > 0) {
+        advisory.checks = bestMatch.scar.constraints;
+      }
+      if (bestMatch.scar.remember) advisory.remember = bestMatch.scar.remember;
+
       return {
         matched: true,
         scar: bestMatch.scar,
         relevance: bestMatch.score,
-        reason: bestMatch.reason
+        reason: bestMatch.reason,
+        // Only include advisory if we have any context to share
+        ...(Object.keys(advisory).length > 0 && { advisory })
       };
     }
 
@@ -451,4 +511,4 @@ if (import.meta.main) {
 }
 
 // Export for programmatic use
-export { daemon, SCARDaemon, type Scar, type MatchResult };
+export { daemon, SCARDaemon, type Scar, type ScarAdvisory, type MatchResult };

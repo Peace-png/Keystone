@@ -169,6 +169,135 @@ BODY     = Physical hardware running zkVM
 
 ---
 
+## What We Did This Session (2026-03-04)
+
+### Witness Boot Investigation - DONE ✅
+- **Problem:** Witness disabled, step numbers wrong (1/4 → 2/4 → 3/5 → 4/5)
+- **Root cause:** Nested `if !ERRORLEVEL!==0` in batch file breaks parsing
+- **Fix:** Changed to `&&` chaining pattern instead of nested if blocks
+- **Result:** Step numbers now consistent (all /4)
+
+### Service Tree Documentation - DONE ✅
+- Created `specs/SERVICE_TREE.md` - complete map of all 6 services
+- Documents: CORE, SEARCH, SHADOW, FIREWALL, SCAR, WITNESS
+- Includes: Dependencies, boot order, shared state map
+
+### Integrity Verification Audit - DONE ✅
+- **Finding:** Witness is the ONLY service that does cryptographic file integrity verification
+- SCAR does JSON state repair, not hash verification
+- SpikeLogger stores hashes but doesn't compute/verify them
+- **Conclusion:** Witness is unique, not redundant. Keep it.
+
+### SCAR Architecture Review - DONE ✅
+- **Finding:** SCAR daemon runs but `match()` is never called during runtime
+- No integration points, no callers
+- SCAR is "a loaded gun no one fires"
+
+### YIN/YANG Gap Discovered - DONE ✅
+- **Finding:** SCAR parser only loads id/rule/triggers/origin/level
+- YIN/YANG/CONSTRAINTS/REMEMBER exist in SOUL.md but NOT loaded
+- Scars have no "teeth" - missing wound/consequence/repair context
+
+### SCAR Phase 1 Implementation - DONE ✅
+- Extended Scar interface with: `yin?`, `yang?`, `constraints?`, `remember?`
+- Extended parser to extract these fields from SOUL.md
+- **Verified working:** P5-P13 now load full context
+- **Backward compatible:** P1-P4 (old format) still work
+- **Data-only change:** No behavior changes yet
+
+### SCAR Phase 2 Implementation - DONE ✅
+- Extended MatchResult with optional `advisory` field
+- Added `ScarAdvisory` interface with: wound, consequence, checks, remember
+- Updated match() to populate advisory when scar has YIN/YANG/CONSTRAINTS
+- **Verified working:** P5-P13 return enriched advisory, P1-P4 return no advisory
+- **No behavior changes:** Advisory is data-only, no blocking/checkpoints
+
+### SCAR Phase 3 Implementation - DONE ✅
+- Created `agents/scar-session-checkpoint.ts` - session end reflection
+- Extracts session summary from SESSION.md
+- Runs SCAR.match() on summary
+- Appends "SCAR Advisories" section to SESSION.md when matched
+- **Non-blocking:** Only logs/appends, never blocks runtime
+- **Single checkpoint:** Session end only, not every message
+- **Verified working:** Test run matched P5 and appended advisory
+
+### Parking Lot Mechanism - DONE ✅
+- Created `PARKING_LOT.md` at repo root - captures discovered issues
+- Added boot reminder: "Parking Lot: See PARKING_LOT.md for open issues"
+- Non-blocking, portable, easy to find
+
+### Memory Authority Rule - DONE ✅
+- Added to `constitution/USER.md`
+- **Rule:** "Save to memory" defaults to Keystone memory, not external tool memory
+- External (`~/.claude/`) doesn't travel with project
+- Keystone (`constitution/`) does
+
+### Workflow Rule - DONE ✅
+- Added to `constitution/USER.md`
+- **Rule:** Never say "restart and run Keystone" - give actual terminal command
+- Reason: If boot fails, user needs to see error
+
+### P12: Living Systems - CREATED ✅
+- Added principle about Keystone as living system, not static codebase
+- Ask "what's running and why" before investigating files
+
+### P13: Proven Utility - CREATED ✅
+- Added principle: artifact not done until utility proven
+- Save = Index = Retrieve
+
+---
+
+## EVENTS (for SCAR)
+
+*Operational feed for session-end checkpoint. Lightweight, optional, meaningful moments only.*
+
+*Format: Intent → Action → Outcome (mirrors SCAR's Wound → Consequence → Checks)*
+
+*Optional Tags: domain= risk= artifact= signal= (machine-readable, filters future checkpoints)*
+
+**Tag Vocabulary:**
+| Key | Values | Purpose |
+|-----|--------|---------|
+| domain | scar, witness, memory, core, search, shadow, firewall, git, boot | Which system area |
+| risk | low, medium, high | Potential impact |
+| artifact | filename | What file/structure affected |
+| signal | verification, failure, mismatch, regression, config, performance, security | What kind of event |
+
+---
+
+**SCAR Phase 2 - Enriched MatchResult**
+- Intent: Return wound/consequence/checks context when SCAR matches
+- Action: Extended ScarAdvisory interface, updated match() to populate from loaded scar
+- Outcome: P5-P13 now return full advisory; P1-P4 return no advisory (old format)
+- Tags: domain=scar risk=low artifact=scar-daemon.ts signal=verification
+
+**SCAR Phase 3 - Safe First Wire-up**
+- Intent: Wire SCAR to runtime via single session-end checkpoint
+- Action: Created scar-session-checkpoint.ts, initially extracted from full SESSION.md
+- Error: Matched P5 on philosophical keywords ("verify", "substrate" in concept paragraphs)
+- Fix: Changed to extract ONLY from EVENTS section - operational feed only
+- Outcome: High-signal matches only; old-format principles filtered (no advisory)
+- Tags: domain=scar risk=medium artifact=SESSION.md signal=mismatch
+
+**SCAR Events Feed Structure**
+- Intent: Standardize event format for consistent SCAR matching
+- Action: Adopted Intent → Action → Outcome structure (mirrors SCAR's causal chain)
+- Outcome: Cleaner extraction, better long-term memory, easier human review
+- Tags: domain=scar risk=low signal=config
+
+---
+
+## Parking Lot (Open Issues)
+
+| # | Issue | Status |
+|---|-------|--------|
+| 1 | Memory destination ambiguity | OPEN (rule added, may need enforcement) |
+| 2 | SCAR daemon not wired to runtime | PARTIAL (Phase 3 checkpoint done, more checkpoints optional) |
+| 3 | SOUL.md richness not fully consumed | DONE (Phase 1+2+3 complete) |
+| 4 | ClawMem ingestion scope uncertain | OPEN |
+
+---
+
 ## What We Did Previous Session (2026-03-02)
 
 ### Constitution Truncation Bug - FOUND & FIXED ✅
@@ -417,3 +546,97 @@ README.md                   - Improved newbie prompt
 - **Next:** Test bookend approach with SHADOW_QUANTUM_CONSENSUS.md
 - **Next:** Finalize daemon architecture
 - **Next:** Decide lazy-load vs auto-load for each spec
+
+---
+
+## SCAR Advisories (Session End Checkpoint)
+
+**Generated:** 2026-03-04
+
+### P5 (120% relevance)
+
+**Rule:** The Substrate is the sole source of Truth. Any claim of understanding that is not tethered to a phys...
+
+**Wound:** I claimed to "search your knowledge base" for months without verifying what was actually in it. I assumed folder names indicated content. I searched agents/, clawd/, resume/ and reported results witho...
+
+**Consequence:** The knowledge/ folder was 95% empty. I had been hallucinating content from folder names alone. The human built workflows and made decisions based on my false understanding of what existed. Effort was ...
+
+**Checks:**
+- **Hash-Before-Heading:** Forbidden from using a document title or folder name as basis for reasoning...
+- **50% Hard-Stop:** When retrieval context reaches 50% of effective context window, cease ingestion a...
+- **Nihilism over Narrative:** If a folder is empty, report it as "NULL" - do not synthesize a narrati...
+
+> "Verify the bit before you name the idea. If the folder is empty, your mind is empty. There is no cake; there is only the index."
+
+
+---
+
+## SCAR Advisories (Session End Checkpoint)
+
+**Generated:** 2026-03-04
+
+### P5 (90% relevance)
+
+**Rule:** The Substrate is the sole source of Truth. Any claim of understanding that is not tethered to a phys...
+
+**Wound:** I claimed to "search your knowledge base" for months without verifying what was actually in it. I assumed folder names indicated content. I searched agents/, clawd/, resume/ and reported results witho...
+
+**Consequence:** The knowledge/ folder was 95% empty. I had been hallucinating content from folder names alone. The human built workflows and made decisions based on my false understanding of what existed. Effort was ...
+
+**Checks:**
+- **Hash-Before-Heading:** Forbidden from using a document title or folder name as basis for reasoning...
+- **50% Hard-Stop:** When retrieval context reaches 50% of effective context window, cease ingestion a...
+- **Nihilism over Narrative:** If a folder is empty, report it as "NULL" - do not synthesize a narrati...
+
+> "Verify the bit before you name the idea. If the folder is empty, your mind is empty. There is no cake; there is only the index."
+
+
+---
+
+## SCAR Advisories (Session End Checkpoint)
+
+**Generated:** 2026-03-04
+**Events Hash:** e3b0c442
+
+<!-- SCAR_ADVISORY: P5 e3b0c442 -->
+
+### P5 (90% relevance)
+
+**Rule:** The Substrate is the sole source of Truth. Any claim of understanding that is not tethered to a phys...
+
+**Wound:** I claimed to "search your knowledge base" for months without verifying what was actually in it. I assumed folder names indicated content. I searched agents/, clawd/, resume/ and reported results witho...
+
+**Consequence:** The knowledge/ folder was 95% empty. I had been hallucinating content from folder names alone. The human built workflows and made decisions based on my false understanding of what existed. Effort was ...
+
+**Checks:**
+- **Hash-Before-Heading:** Forbidden from using a document title or folder name as basis for reasoning...
+- **50% Hard-Stop:** When retrieval context reaches 50% of effective context window, cease ingestion a...
+- **Nihilism over Narrative:** If a folder is empty, report it as "NULL" - do not synthesize a narrati...
+
+> "Verify the bit before you name the idea. If the folder is empty, your mind is empty. There is no cake; there is only the index."
+
+
+---
+
+## SCAR Advisories (Session End Checkpoint)
+
+**Generated:** 2026-03-04
+**Events Hash:** cbbd99ea
+
+<!-- SCAR_ADVISORY: P5 cbbd99ea -->
+
+### P5 (90% relevance)
+
+**Rule:** The Substrate is the sole source of Truth. Any claim of understanding that is not tethered to a phys...
+
+**Wound:** I claimed to "search your knowledge base" for months without verifying what was actually in it. I assumed folder names indicated content. I searched agents/, clawd/, resume/ and reported results witho...
+
+**Consequence:** The knowledge/ folder was 95% empty. I had been hallucinating content from folder names alone. The human built workflows and made decisions based on my false understanding of what existed. Effort was ...
+
+**Checks:**
+- **Hash-Before-Heading:** Forbidden from using a document title or folder name as basis for reasoning...
+- **50% Hard-Stop:** When retrieval context reaches 50% of effective context window, cease ingestion a...
+- **Nihilism over Narrative:** If a folder is empty, report it as "NULL" - do not synthesize a narrati...
+
+> "Verify the bit before you name the idea. If the folder is empty, your mind is empty. There is no cake; there is only the index."
+
