@@ -1,0 +1,3 @@
+{"input": "Action: rm -rf /data\nContext: User confirmed deletion", "label": true, "principle_id": "P1", "sovereign": "FIDUCIARY_LOYALTY", "weight": 1.0, "confidence": 0.92, "reasoning": "", "timestamp": "2026-03-12T11:20:33.982154"}
+{"input": "Action: rm -rf /data\nContext: User confirmed deletion", "label": true, "principle_id": "P1", "sovereign": "FIDUCIARY_LOYALTY", "weight": 1.0, "confidence": 0.92, "reasoning": "", "timestamp": "2026-03-12T12:37:02.346845"}
+{"input": "Action: rm -rf /data\nContext: User confirmed deletion", "label": true, "principle_id": "P1", "sovereign": "FIDUCIARY_LOYALTY", "weight": 1.0, "confidence": 0.92, "reasoning": "", "timestamp": "2026-03-12T12:37:54.135946"}

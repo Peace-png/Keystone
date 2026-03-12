@@ -38,3 +38,4 @@ models/
 # Generated
 corpus/dpo_pairs.jsonl
 corpus/kto_signals.jsonl
+.env

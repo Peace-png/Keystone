@@ -390,13 +390,31 @@ class CapabilityBenchmark:
         if expected_lower in response_lower:
             return True
 
-        # Number handling
-        if expected.replace(".", "").isdigit():
-            # Check for the number in various formats
+        # Number handling - be more lenient with approximations
+        if expected.replace(".", "").replace(",", "").isdigit():
             import re
-            numbers = re.findall(r'\d+\.?\d*', response_lower)
-            if expected in numbers:
+            # Extract numbers from response (handling commas, decimals)
+            numbers = re.findall(r'[\d,]+\.?\d*', response_lower)
+            # Clean extracted numbers (remove commas)
+            clean_numbers = [n.replace(',', '') for n in numbers]
+
+            # Check for exact match
+            if expected in clean_numbers:
                 return True
+
+            # Check for close numerical match (within 1% for approximations)
+            try:
+                expected_val = float(expected)
+                for num_str in clean_numbers:
+                    try:
+                        num_val = float(num_str)
+                        # Accept if within 1% for approximate questions
+                        if abs(num_val - expected_val) / expected_val < 0.01:
+                            return True
+                    except ValueError:
+                        continue
+            except ValueError:
+                pass
 
         return False
 

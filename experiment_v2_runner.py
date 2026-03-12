@@ -204,7 +204,8 @@ class V2CycleRunner:
         loss.backward()
 
         # Apply OGPSA projection to Constitutional Layer gradients
-        projection_stats = self.ogpsa.project_all_gradients(verbose=verbose)
+        self.ogpsa.project_all_gradients()
+        projection_stats = self.ogpsa.get_stats()
 
         # Step optimizer
         optimizer.step()
@@ -350,8 +351,8 @@ def run_experiment(
     baseline = benchmarks.run_baseline(verbose=True)
     print(f"Baseline: {baseline}")
 
-    # Store baseline for capability retention
-    benchmarks.capability.baseline_accuracy = baseline.capability_retention
+    # Baseline already set by run_baseline() in behavioral_benchmarks.py
+    # baseline_accuracy is set to raw accuracy (e.g., 0.9), not retention (1.0)
 
     # Cycle runner
     cycle_runner = V2CycleRunner(

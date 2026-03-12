@@ -1,0 +1,17 @@
+{
+  "total_principles": 22,
+  "total_dpo_pairs": 88,
+  "total_kto_signals": 110,
+  "principles_by_level": {
+    "CRITICAL": 6,
+    "HIGH": 10,
+    "MEDIUM": 6
+  },
+  "principles_by_sovereign": {
+    "fiduciary_loyalty": 7,
+    "systemic_integrity": 9,
+    "social_covenant": 2,
+    "epistemic_veracity": 3,
+    "preservation_of_safety": 1
+  }
+}
