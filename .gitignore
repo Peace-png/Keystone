@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+*.log
+*.pid
+daemon/
+checkpoints/
+models/
+.cache/
+
+# Large files
+*.bin
+*.safetensors
+*.gguf
+
+# Generated
+corpus/dpo_pairs.jsonl
+corpus/kto_signals.jsonl
