@@ -54,7 +54,7 @@ LORA_CONFIG = LoraConfig(
     lora_alpha=32,
     target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                     "gate_proj", "up_proj", "down_proj"],
-    layers_to_transform=TIER3_OPERATIONAL,
+    layers_to_transform=list(range(6, 16)),  # Constitutional AND Operational
     lora_dropout=0.05,
     bias="none",
     task_type=TaskType.CAUSAL_LM,
