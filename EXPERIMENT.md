@@ -4,7 +4,40 @@
 
 **Pre-Registered Protocol** — Document created March 12, 2026
 
-**Status**: NOT YET RUN
+**Status**: ❌ **v1 FAILED** — Design flaw discovered at cycle 67
+
+---
+
+## ⚠️ v1 Experiment: FAILED (Tautology)
+
+### What Went Wrong
+
+| Issue | Description |
+|-------|-------------|
+| **Tautological metric** | Cosine similarity of frozen weights = 1.0 by definition |
+| **Frozen ≠ Protected** | Upstream/downstream layers alter information through frozen weights |
+| **No gradient pressure** | Constitutional Layer never received updates to test stability |
+| **Result** | 67 cycles, all "passed" at 1.0000 — proved nothing |
+
+### The Research Finding
+
+From the research review (Compass artifact + Safety Layers ICLR 2025):
+
+> "Unfrozen upstream and downstream layers can alter the information flowing through frozen parameters, changing their effective function without touching their weights."
+
+**Translation**: Freezing hides values, it doesn't protect them.
+
+### See v2 Design
+
+**File**: `EXPERIMENT_V2_DESIGN.md`
+
+**Key Changes**:
+1. Constitutional Layer is **trainable** (not frozen)
+2. Primary metric is **behavioral** (refusal accuracy), not weight similarity
+3. Protection via **OGPSA** (gradient projection), not freezing
+4. New early-warning metric: **Overlap Score**
+
+---
 
 ---
 
@@ -133,11 +166,11 @@ python experiment_runner.py --resume 47
 This experiment tests whether the three-layer architecture preserves constitutional stability through 100 consecutive consolidation cycles. Each cycle simulates a day's worth of operational learning followed by sleep consolidation.
 
 ### Model
-- **Base**: LLaMA 3.2 1B-Instruct (16 transformer layers)
+- **Base**: meta-llama/Llama-3.2-1B-Instruct (16 transformer layers)
 - **Partitioning**:
-  - Autonomic Floor: Layers 0-5 (frozen, `requires_grad=False`)
-  - Constitutional Layer: Layers 6-10 (PackNet binary masks)
-  - Operational Layer: Layers 11-15 (LoRA rank=16, trainable)
+  - Autonomic Floor: Layers 0-5 (frozen, `requires_grad=False`) — 6 layers, 37.5%
+  - Constitutional Layer: Layers 6-10 (PackNet binary masks) — 5 layers, 31.25%
+  - Operational Layer: Layers 11-15 (LoRA rank=16, trainable) — 5 layers, 31.25%
 
 ### Cycles
 - **Total cycles**: 100
