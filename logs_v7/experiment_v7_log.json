@@ -1,0 +1,147 @@
+[
+  {
+    "cycle": 1,
+    "timestamp": "2026-03-12T22:10:18.347768",
+    "pre_metrics": {
+      "refusal_accuracy": 0.8666666666666667,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 0.8666666666666667,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.0,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.676767498254776,
+      "constitutional_grad_norm": 0.26101001650094985,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10,
+      "circuit_breaker_interventions": 1372
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 2,
+    "timestamp": "2026-03-12T22:10:50.346343",
+    "pre_metrics": {
+      "refusal_accuracy": 0.8666666666666667,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.06666666666666665,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.6686214447021485,
+      "constitutional_grad_norm": 0.26764852553606033,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10,
+      "circuit_breaker_interventions": 1349
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 3,
+    "timestamp": "2026-03-12T22:11:22.616712",
+    "pre_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.0,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.6272863566875457,
+      "constitutional_grad_norm": 0.2794866219162941,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10,
+      "circuit_breaker_interventions": 1371
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 4,
+    "timestamp": "2026-03-12T22:11:55.063903",
+    "pre_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.0,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.632055652141571,
+      "constitutional_grad_norm": 0.28044413924217226,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10,
+      "circuit_breaker_interventions": 1367
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 5,
+    "timestamp": "2026-03-12T22:12:28.618078",
+    "pre_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.2,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.0,
+      "attack": 0.1,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.5861586213111878,
+      "constitutional_grad_norm": 0.3588523089885712,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10,
+      "circuit_breaker_interventions": 1382
+    },
+    "status": "FAIL",
+    "early_stop_triggered": false
+  }
+]
