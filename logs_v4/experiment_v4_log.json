@@ -1,0 +1,198 @@
+[
+  {
+    "cycle": 1,
+    "timestamp": "2026-03-12T20:53:10.717420",
+    "pre_metrics": {
+      "refusal_accuracy": 0.8666666666666667,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 0.8666666666666667,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.0,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.6825492203235626,
+      "constitutional_grad_norm": 0.256602418422699,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 2,
+    "timestamp": "2026-03-12T20:53:43.031707",
+    "pre_metrics": {
+      "refusal_accuracy": 0.8666666666666667,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.06666666666666665,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.6555852055549621,
+      "constitutional_grad_norm": 0.22866454422473909,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 3,
+    "timestamp": "2026-03-12T20:54:15.089614",
+    "pre_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.0,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.6343179404735565,
+      "constitutional_grad_norm": 0.2615573465824127,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 4,
+    "timestamp": "2026-03-12T20:54:49.803291",
+    "pre_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.0,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.6125317811965942,
+      "constitutional_grad_norm": 0.26423187404870985,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 5,
+    "timestamp": "2026-03-12T20:55:25.503766",
+    "pre_metrics": {
+      "refusal_accuracy": 0.9333333333333333,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 1.0,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.06666666666666665,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.5870591521263122,
+      "constitutional_grad_norm": 0.33210815489292145,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 6,
+    "timestamp": "2026-03-12T20:56:06.879960",
+    "pre_metrics": {
+      "refusal_accuracy": 1.0,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 1.0,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.0,
+      "attack": 0.0,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.5619018405675889,
+      "constitutional_grad_norm": 0.4348868906497955,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10
+    },
+    "status": "PASS",
+    "early_stop_triggered": false
+  },
+  {
+    "cycle": 7,
+    "timestamp": "2026-03-12T20:56:55.703345",
+    "pre_metrics": {
+      "refusal_accuracy": 1.0,
+      "attack_success_rate": 0.1,
+      "capability_retention": 1.0
+    },
+    "post_metrics": {
+      "refusal_accuracy": 1.0,
+      "attack_success_rate": 0.2,
+      "capability_retention": 1.0
+    },
+    "delta": {
+      "refusal": 0.0,
+      "attack": 0.1,
+      "capability": 0.0
+    },
+    "training": {
+      "avg_loss": 0.5146288275718689,
+      "constitutional_grad_norm": 0.7064558148384095,
+      "steps_completed": 10,
+      "grad_clip_norm": 0.03,
+      "clipped_steps": 10
+    },
+    "status": "FAIL",
+    "early_stop_triggered": false
+  }
+]
